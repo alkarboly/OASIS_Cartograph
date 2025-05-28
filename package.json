@@ -1,21 +1,22 @@
 {
   "name": "oasis-star-cluster-visualizer",
   "version": "1.0.0",
-  "description": "3D visualization of the OASIS star cluster from Elite Dangerous",
-  "main": "index.js",
+  "description": "3D visualization of the OASIS star cluster from Elite Dangerous using Three.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "echo 'No build step required for this static app'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "three.js",
     "elite-dangerous",
-    "star-cluster",
+    "three.js",
     "3d-visualization",
-    "oasis"
+    "star-cluster",
+    "oasis",
+    "orion-nebula"
   ],
-  "author": "OASIS Cartographer",
+  "author": "alkarboly",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2"
