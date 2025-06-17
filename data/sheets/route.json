@@ -1,0 +1,7994 @@
+[
+  {
+    "#": 1,
+    "system_name": "Trapezium Sector CM-S b5-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 2,
+    "system_name": "Trapezium Sector BG-W c2-11",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 3,
+    "system_name": "Trapezium Sector DB-W c2-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 4,
+    "system_name": "Trapezium Sector DG-X d1-11",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "CMDR Ligaratus",
+    "assigned_fc": ""
+  },
+  {
+    "#": 5,
+    "system_name": "Trapezium Sector LY-O b7-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 6,
+    "system_name": "Trapezium Sector IH-U c3-9",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "CMDR Ligaratus",
+    "assigned_fc": ""
+  },
+  {
+    "#": 7,
+    "system_name": "Trapezium Sector IH-U c3-11",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "sleepy-lil-turtle",
+    "assigned_fc": ""
+  },
+  {
+    "#": 8,
+    "system_name": "Trapezium Sector IH-U c3-13",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Gery",
+    "assigned_fc": ""
+  },
+  {
+    "#": 9,
+    "system_name": "Trapezium Sector IH-U c3-12",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 10,
+    "system_name": "Trapezium Sector DG-X d1-8",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "CMDR Ligaratus",
+    "assigned_fc": ""
+  },
+  {
+    "#": 11,
+    "system_name": "Trapezium Sector GM-U c3-5",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Mando",
+    "assigned_fc": ""
+  },
+  {
+    "#": 12,
+    "system_name": "Trapezium Sector EG-X d1-15",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Mando",
+    "assigned_fc": ""
+  },
+  {
+    "#": 13,
+    "system_name": "Trapezium Sector GM-U c3-11",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Voiddancer",
+    "assigned_fc": ""
+  },
+  {
+    "#": 14,
+    "system_name": "Trapezium Sector DG-X d1-5",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 15,
+    "system_name": "Trapezium Sector MO-N b8-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "Mando",
+    "assigned_fc": ""
+  },
+  {
+    "#": 16,
+    "system_name": "Trapezium Sector NJ-N b8-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 17,
+    "system_name": "Trapezium Sector GM-U c3-2",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 18,
+    "system_name": "Trapezium Sector PU-L b9-0",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "mutahadir",
+    "assigned_fc": ""
+  },
+  {
+    "#": 19,
+    "system_name": "NGC 2232 Sector HW-W c1-1",
+    "claimed?_": "TRUE",
+    "completed?_": "TRUE",
+    "architect?_": "",
+    "assigned_fc": "WNQ-WTW"
+  },
+  {
+    "#": 20,
+    "system_name": "NGC 2232 Sector LH-V b2-0",
+    "claimed?_": "TRUE",
+    "completed?_": "FALSE",
+    "architect?_": "sleepy-lil-turtle",
+    "assigned_fc": "WNQ-WTW"
+  },
+  {
+    "#": 21,
+    "system_name": "NGC 2232 Sector GW-W c1-1",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": "WNQ-WTW"
+  },
+  {
+    "#": 22,
+    "system_name": "NGC 2232 Sector KM-V b2-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 23,
+    "system_name": "NGC 2232 Sector MX-T b3-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 24,
+    "system_name": "NGC 2232 Sector DL-Y d5",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 25,
+    "system_name": "NGC 2232 Sector EB-X c1-1",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 26,
+    "system_name": "NGC 2232 Sector EL-X b1-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 27,
+    "system_name": "NGC 2232 Sector GW-V b2-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 28,
+    "system_name": "NGC 2232 Sector IR-V b2-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 29,
+    "system_name": "NGC 2232 Sector JR-V b2-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 30,
+    "system_name": "NGC 2232 Sector FB-X c1-3",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 31,
+    "system_name": "NGC 2232 Sector NX-T b3-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 32,
+    "system_name": "NGC 2232 Sector FB-X c1-1",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 33,
+    "system_name": "NGC 2232 Sector JH-V c2-3",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 34,
+    "system_name": "NGC 2232 Sector DL-Y d17",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 35,
+    "system_name": "NGC 2232 Sector QI-S b4-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 36,
+    "system_name": "NGC 2232 Sector SD-S b4-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 37,
+    "system_name": "NGC 2232 Sector KH-V c2-3",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 38,
+    "system_name": "NGC 2232 Sector KH-V c2-4",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 39,
+    "system_name": "NGC 2232 Sector YU-O b6-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 40,
+    "system_name": "NGC 2232 Sector IR-W d1-26",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 41,
+    "system_name": "NGC 2232 Sector IR-W d1-25",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 42,
+    "system_name": "NGC 2232 Sector IR-W d1-14",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 43,
+    "system_name": "NGC 2232 Sector IR-W d1-15",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 44,
+    "system_name": "NGC 2232 Sector BG-N b7-0",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 45,
+    "system_name": "NGC 2232 Sector GW-W d1-28",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": 46,
+    "system_name": "NGC 2232 Sector AG-N b7-1",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  },
+  {
+    "#": "",
+    "system_name": "",
+    "claimed?_": "FALSE",
+    "completed?_": "FALSE",
+    "architect?_": "",
+    "assigned_fc": ""
+  }
+]

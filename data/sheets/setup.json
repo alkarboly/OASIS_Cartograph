@@ -1,0 +1,30 @@
+[
+  {
+    "expedition_name:": "Expedition Keyword (6 characters):",
+    "osc_iii_": "osc3"
+  },
+  {
+    "expedition_name:": "Resupply System:",
+    "osc_iii_": "2MASS J05403931-0226460"
+  },
+  {
+    "expedition_name:": "Allow Dibs? ",
+    "osc_iii_": "TRUE"
+  },
+  {
+    "expedition_name:": "Starting System:",
+    "osc_iii_": "Trapezium Sector CM-S b5-0"
+  },
+  {
+    "expedition_name:": "Ending System:",
+    "osc_iii_": "NGC 2232 Sector AG-N b7-1"
+  },
+  {
+    "expedition_name:": "Current Claim:",
+    "osc_iii_": "NGC 2232 Sector LH-V b2-0"
+  },
+  {
+    "expedition_name:": "Total Number of Links:",
+    "osc_iii_": 46
+  }
+]

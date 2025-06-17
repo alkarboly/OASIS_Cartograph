@@ -1,15 +1,137 @@
 # OASIS Star System Dataset Generator
 
-# This notebook fetches star systems around each anchor point from EDSM and generates a combined dataset for visualization.
-# Each anchor system is processed to find nearby systems within its specified radius, and all data is combined into a single dataset.
-
-# Required input file:
-# - data/vis_anchor_systems.csv: Contains anchor system names, radii, and descriptions
-
 import pandas as pd
 import requests
 from pathlib import Path
 import os
+import gspread
+import json
+import numpy as np
+from google.oauth2.service_account import Credentials
+from dotenv import load_dotenv
+from datetime import datetime, timedelta
+
+# Load environment variables
+load_dotenv()
+
+class NumpyJSONEncoder(json.JSONEncoder):
+    """Custom JSON encoder to handle numpy and pandas data types"""
+    def default(self, obj):
+        if isinstance(obj, (np.integer, np.floating)):
+            return int(obj) if isinstance(obj, np.integer) else float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif pd.isna(obj):
+            return None
+        return super().default(obj)
+
+def clean_data_for_json(data):
+    """Clean data to ensure it's JSON serializable"""
+    if isinstance(data, dict):
+        return {k: clean_data_for_json(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [clean_data_for_json(item) for item in data]
+    elif isinstance(data, (pd.DataFrame, pd.Series)):
+        return clean_data_for_json(data.to_dict())
+    elif pd.isna(data) or isinstance(data, float) and np.isnan(data):
+        return None
+    elif isinstance(data, (np.integer, np.floating)):
+        return int(data) if isinstance(data, np.integer) else float(data)
+    elif isinstance(data, np.ndarray):
+        return data.tolist()
+    return data
+
+def init_google_sheets():
+    """Initialize Google Sheets client"""
+    scope = [
+        'https://www.googleapis.com/auth/spreadsheets.readonly',
+        'https://www.googleapis.com/auth/drive.readonly'
+    ]
+    
+    creds = {
+        "type": "service_account",
+        "project_id": "inlaid-keyword-463222",
+        "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace("\\n", "\n"),
+        "client_email": os.getenv("GOOGLE_SERVICE_ACCOUNT_EMAIL"),
+        "token_uri": "https://oauth2.googleapis.com/token",
+    }
+    
+    credentials = Credentials.from_service_account_info(creds, scopes=scope)
+    return gspread.authorize(credentials)
+
+def clean_column_name(col):
+    """Clean column names to be valid JSON keys"""
+    # Remove any trailing colons or spaces
+    col = col.strip().rstrip(':').rstrip()
+    # Convert to lowercase and replace spaces with underscores
+    col = col.lower().replace(' ', '_')
+    # Remove any invalid characters
+    col = ''.join(c for c in col if c.isalnum() or c == '_')
+    return col
+
+def clean_value(val):
+    """Clean values to be valid JSON values"""
+    if isinstance(val, str):
+        val = val.strip()
+        # Convert string booleans to actual booleans
+        if val.upper() == 'TRUE':
+            return True
+        elif val.upper() == 'FALSE':
+            return False
+        # Try to convert to number if possible
+        try:
+            if '.' in val:
+                return float(val)
+            else:
+                return int(val)
+        except ValueError:
+            return val
+    return val
+
+def fetch_and_save_sheets():
+    """Fetch data from all sheets and save each to its own JSON file"""
+    client = init_google_sheets()
+    spreadsheet_id = os.getenv("GOOGLE_SHEETS_ID")
+    spreadsheet = client.open_by_key(spreadsheet_id)
+    
+    # Create data directory if it doesn't exist
+    data_dir = Path(os.path.abspath("../data"))
+    sheets_dir = data_dir / "sheets"
+    sheets_dir.mkdir(exist_ok=True, parents=True)
+    
+    # List of sheets to fetch
+    sheets_to_fetch = ['SETUP', 'Admin-Manifest', 'ROUTE', 'FC-Manifest', 'Hauler-Manifest']
+    
+    print("\nFetching and saving Google Sheets data...")
+    for sheet_name in sheets_to_fetch:
+        try:
+            worksheet = spreadsheet.worksheet(sheet_name)
+            data = worksheet.get_all_records()
+            
+            # Clean the data
+            cleaned_data = []
+            for row in data:
+                # Remove empty rows
+                if any(row.values()):
+                    # Clean column names and values
+                    cleaned_row = {
+                        clean_column_name(k): clean_value(v)
+                        for k, v in row.items()
+                        if k.strip() and not pd.isna(v)
+                    }
+                    if cleaned_row:  # Only add if we have data after cleaning
+                        cleaned_data.append(clean_data_for_json(cleaned_row))
+            
+            # Save to JSON
+            output_file = sheets_dir / f"{sheet_name.lower()}.json"
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(cleaned_data, f, indent=2, cls=NumpyJSONEncoder)
+            print(f"✓ Saved {sheet_name}: {len(cleaned_data)} rows to {output_file}")
+            
+        except Exception as e:
+            print(f"❌ Error fetching {sheet_name}: {e}")
+    
+    print("\n💾 All sheets have been saved to individual JSON files in data/sheets/")
 
 def get_coords(system_name):
     """Get x, y, z coordinates from EDSM"""
@@ -65,12 +187,46 @@ def fetch_systems_near_coords(x, y, z, radius=100, system_name=""):
 
     return pd.DataFrame(systems)
 
+def check_if_update_needed(file_path):
+    """Check if the file needs to be updated based on timestamp"""
+    if not file_path.exists():
+        print("💫 No existing dataset found. Will create new one.")
+        return True
+        
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+            if not isinstance(data, dict) or 'last_updated' not in data:
+                print("💫 Invalid or old format dataset found. Will update.")
+                return True
+            
+            last_updated = datetime.fromisoformat(data['last_updated'])
+            time_since_update = datetime.now() - last_updated
+            
+            if time_since_update > timedelta(hours=24):
+                print(f"💫 Dataset is {time_since_update.total_seconds() / 3600:.1f} hours old. Will update.")
+                return True
+            else:
+                print(f"✨ Dataset is only {time_since_update.total_seconds() / 3600:.1f} hours old. Skipping update.")
+                return False
+                
+    except (json.JSONDecodeError, KeyError, ValueError) as e:
+        print(f"💫 Error reading existing dataset: {e}. Will create new one.")
+        return True
+
 def fetch_combined_dataset(anchor_systems_df):
     """Fetch and combine data for all anchor systems"""
     data_dir = Path(os.path.abspath("../data"))
     data_dir.mkdir(exist_ok=True)
     
-    all_systems = []
+    output_file = data_dir / "combined_visualization_systems.json"
+    
+    # Check if we need to update the dataset
+    if not check_if_update_needed(output_file):
+        return None
+    
+    # Initialize the combined DataFrame
+    combined_df = pd.DataFrame()
     
     for _, anchor in anchor_systems_df.iterrows():
         try:
@@ -85,73 +241,81 @@ def fetch_combined_dataset(anchor_systems_df):
                 # Add anchor system information
                 systems_df['anchor_system'] = anchor['name']
                 systems_df['anchor_description'] = anchor['description']
-                all_systems.append(systems_df)
-                print(f"Found {len(systems_df)} systems near {anchor['name']}")
+                
+                if combined_df.empty:
+                    # First anchor system, just store its data
+                    combined_df = systems_df
+                    print(f"✓ Added {len(systems_df)} systems from {anchor['name']}")
+                else:
+                    # Check for duplicates with existing systems
+                    existing_systems = set(combined_df['name'])
+                    new_systems = systems_df[~systems_df['name'].isin(existing_systems)]
+                    
+                    # Add only the new systems
+                    if not new_systems.empty:
+                        combined_df = pd.concat([combined_df, new_systems])
+                        print(f"✓ Added {len(new_systems)} new systems from {anchor['name']}")
+                    
+                    # Report duplicates
+                    duplicates = systems_df[systems_df['name'].isin(existing_systems)]
+                    if not duplicates.empty:
+                        print(f"ℹ️ Skipped {len(duplicates)} duplicate systems from {anchor['name']}")
         
         except Exception as e:
             print(f"❌ Error processing {anchor['name']}: {e}")
     
-    if all_systems:
-        # First combine all systems
-        print("\nCombining datasets...")
-        combined_df = pd.concat(all_systems)
-        print(f"Total systems before deduplication: {len(combined_df)}")
+    if not combined_df.empty:
+        print(f"\nTotal unique systems: {len(combined_df)}")
         
-        # Handle duplicates - keep first occurrence but merge anchor information
-        print("Removing duplicates...")
-        # Sort by anchor system to prioritize certain systems
-        combined_df = combined_df.sort_values('anchor_system')
+        # Convert DataFrame to list of dictionaries and add timestamp
+        systems_data = combined_df.to_dict('records')
+        output_data = {
+            'last_updated': datetime.now().isoformat(),
+            'systems': clean_data_for_json(systems_data)
+        }
         
-        # For systems that appear multiple times, combine their anchor information
-        duplicates = combined_df[combined_df.duplicated(subset=['name'], keep=False)]
-        if not duplicates.empty:
-            print(f"\nFound {len(duplicates)//2} systems that appear in multiple anchor regions:")
-            for name in duplicates['name'].unique():
-                matches = combined_df[combined_df['name'] == name]
-                print(f"- {name} appears in: {', '.join(matches['anchor_system'].unique())}")
-        
-        # Remove duplicates but keep first occurrence (after sorting)
-        combined_df = combined_df.drop_duplicates(subset=['name'], keep='first')
-        print(f"Total systems after deduplication: {len(combined_df)}")
-        
-        # Save combined dataset
-        output_file = data_dir / "combined_visualization_systems.csv"
-        combined_df.to_csv(output_file, index=False)
+        # Save as JSON
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2, cls=NumpyJSONEncoder)
         print(f"\n💾 Saved combined dataset to: {output_file}")
         
         return combined_df
     
     return pd.DataFrame()
 
-# Load anchor systems and generate the combined dataset
-try:
-    # Ensure data directory exists
-    data_dir = Path("../data")
-    data_dir.mkdir(exist_ok=True)
-    
-    # Check if anchor systems file exists
-    anchor_file = data_dir / "vis_anchor_systems.csv"
-    if not anchor_file.exists():
-        raise FileNotFoundError(f"Required file not found: {anchor_file}")
+# Main execution
+if __name__ == "__main__":
+    try:
+        # Fetch and save Google Sheets data
+        fetch_and_save_sheets()
         
-    # Load anchor systems
-    anchor_systems = pd.read_csv(anchor_file)
-    if len(anchor_systems) == 0:
-        raise ValueError("No anchor systems found in the CSV file")
+        # Continue with existing EDSM data fetching
+        data_dir = Path("../data")
+        data_dir.mkdir(exist_ok=True)
         
-    print(f"Found {len(anchor_systems)} anchor systems:")
-    for _, anchor in anchor_systems.iterrows():
-        print(f"- {anchor['name']} (radius: {anchor['radius_ly']}ly)")
-    print("\nGenerating combined dataset...")
-    
-    # Generate the dataset
-    all_systems = fetch_combined_dataset(anchor_systems)
-    
-except FileNotFoundError as e:
-    print(f"\n❌ Error: {e}")
-    print("\nPlease ensure vis_anchor_systems.csv exists in the data directory with columns:")
-    print("- name: Name of the anchor system")
-    print("- radius_ly: Radius in light years to search around the system")
-    print("- description: Description of the anchor system")
-except Exception as e:
-    print(f"\n❌ Error: {e}")
+        anchor_file = data_dir / "vis_anchor_systems.csv"
+        if not anchor_file.exists():
+            raise FileNotFoundError(f"Required file not found: {anchor_file}")
+        
+        anchor_systems = pd.read_csv(anchor_file)
+        if len(anchor_systems) == 0:
+            raise ValueError("No anchor systems found in the CSV file")
+        
+        print(f"\nFound {len(anchor_systems)} anchor systems:")
+        for _, anchor in anchor_systems.iterrows():
+            print(f"- {anchor['name']} (radius: {anchor['radius_ly']}ly)")
+        print("\nGenerating combined dataset...")
+        
+        # Generate combined dataset
+        combined_df = fetch_combined_dataset(anchor_systems)
+        
+        if combined_df is None:
+            print("\n✨ Using existing dataset (less than 24 hours old)")
+        elif not combined_df.empty:
+            print("\n✨ Successfully generated new dataset!")
+            print(f"Total systems: {len(combined_df)}")
+        else:
+            print("\n❌ Failed to generate combined dataset")
+            
+    except Exception as e:
+        print(f"\n❌ Error: {e}")
