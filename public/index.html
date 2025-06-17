@@ -1,153 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OASIS Star Cluster Visualizer - Elite Dangerous</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <title>OASIS Star Map</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        canvas { display: block; }
+        #info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 12px 15px;
+            font-size: 13px;
+            line-height: 1.4;
+            border-radius: 8px;
+            max-width: 300px;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .region-label {
+            background: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 215, 0, 0.85);
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            z-index: 50;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            backdrop-filter: blur(4px);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            opacity: 0.85;
+            transform-origin: center;
+        }
+        .region-label:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        #controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 12px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        .toggle-switch:hover {
+            opacity: 1;
+        }
+        .toggle-switch input[type="checkbox"] {
+            appearance: none;
+            width: 40px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .toggle-switch input[type="checkbox"]::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .toggle-switch input[type="checkbox"]:checked {
+            background: rgba(76, 175, 80, 0.9);
+        }
+        .toggle-switch input[type="checkbox"]:checked::before {
+            left: 21px;
+        }
+        .toggle-switch label {
+            user-select: none;
+            cursor: pointer;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1>OASIS Star Cluster Visualizer</h1>
-        <p>Elite Dangerous - Orion Nebula Region</p>
-    </header>
-
-    <!-- Control Panel -->
-    <div class="control-panel">
-        <div class="controls-section">
-            <h3>Filters</h3>
-            
-            <!-- Toggle Controls -->
-            <div class="toggle-group">
-                <label class="toggle-label">
-                    <input type="checkbox" id="showClaimed" checked>
-                    <span class="toggle-slider"></span>
-                    Show Claimed Systems
-                </label>
-                
-                <label class="toggle-label">
-                    <input type="checkbox" id="showUnclaimed" checked>
-                    <span class="toggle-slider"></span>
-                    Show Unclaimed Systems
-                </label>
-                
-                <label class="toggle-label">
-                    <input type="checkbox" id="showPortComplete" checked>
-                    <span class="toggle-slider"></span>
-                    Show Port Complete
-                </label>
-                
-                <label class="toggle-label">
-                    <input type="checkbox" id="showPortIncomplete" checked>
-                    <span class="toggle-slider"></span>
-                    Show Port Incomplete
-                </label>
-            </div>
-
-            <!-- Legend -->
-            <div class="legend">
-                <h4>Legend</h4>
-                <div class="legend-item">
-                    <div class="legend-color claimed-complete"></div>
-                    <span>Claimed + Port Complete</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color claimed-incomplete"></div>
-                    <span>Claimed + Port Incomplete</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color unclaimed"></div>
-                    <span>Unclaimed</span>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="stats">
-                <h4>Statistics</h4>
-                <div id="systemCount">Total Systems: 0</div>
-                <div id="claimedCount">Claimed: 0</div>
-                <div id="portCompleteCount">Port Complete: 0</div>
-            </div>
+    <div id="info">Hover over a star to see details</div>
+    <div id="controls">
+        <div class="toggle-switch">
+            <label>
+                <input type="checkbox" id="showUnclaimedSystems">
+                Show Unclaimed Systems
+            </label>
         </div>
     </div>
-
-    <!-- 3D Scene Container -->
-    <div id="scene-container"></div>
-
-    <!-- System Info Panel -->
-    <div id="system-info" class="system-info hidden">
-        <div class="info-header">
-            <h3 id="system-name">System Name</h3>
-            <button id="close-info" class="close-btn">&times;</button>
-        </div>
-        <div class="info-content">
-            <div class="info-row">
-                <span class="info-label">Commander:</span>
-                <span id="cmdr-name">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Discord:</span>
-                <span id="discord-name">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Coordinates:</span>
-                <span id="coordinates">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Claimed:</span>
-                <span id="is-claimed">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Port Complete:</span>
-                <span id="port-complete">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Orbital Slots:</span>
-                <span id="orbital-slots">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Planetary Slots:</span>
-                <span id="planetary-slots">-</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Asteroid Slots:</span>
-                <span id="asteroid-slots">-</span>
-            </div>
-            <div class="info-section">
-                <span class="info-label">Narrative:</span>
-                <p id="narrative">-</p>
-            </div>
-            <div class="info-row">
-                <span class="info-label">Inara Link:</span>
-                <a id="inara-link" href="#" target="_blank">View on Inara</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Auto-rotation prompt bubble -->
-    <div id="auto-rotate-prompt" class="auto-rotate-prompt">
-        <div class="prompt-content">
-            <p>🎬 Auto-rotating through OASIS systems</p>
-            <p>Click or drag to take control</p>
-        </div>
-    </div>
-
-    <!-- Loading Screen -->
-    <div id="loading" class="loading">
-        <div class="loading-content">
-            <div class="spinner"></div>
-            <p>Loading OASIS Star Cluster...</p>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="js/csvParser.js"></script>
-    <script src="js/starSystem.js"></script>
-    <script src="js/sceneManager.js"></script>
-    <script src="js/uiController.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html> 

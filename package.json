@@ -2,6 +2,7 @@
   "name": "oasis-star-cluster-visualizer",
   "version": "1.0.0",
   "description": "3D visualization of the OASIS star cluster from Elite Dangerous using Three.js",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
