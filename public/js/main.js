@@ -188,7 +188,11 @@ async function init() {
             if (memorialSystem) {
                 const position = parseCoordinates(memorialSystem);
                 if (position) {
-                    camera.position.set(position.x + 500, position.y + 800, position.z + 500);
+                    // Rotate the camera position 90 degrees around the Y axis
+                    const angle = Math.PI / 2; // 90 degrees in radians
+                    const x = position.x + 500 * Math.cos(angle) - 500 * Math.sin(angle);
+                    const z = position.z + 500 * Math.sin(angle) + 500 * Math.cos(angle);
+                    camera.position.set(x, position.y + 800, z);
                     controls.target.copy(position);
                 }
             }
@@ -711,8 +715,7 @@ function createTextSprite(text, options = {}) {
         map: texture,
         transparent: true,
         depthTest: false,
-        depthWrite: false,
-        renderOrder: 999999
+        depthWrite: false
     });
     
     const sprite = new THREE.Sprite(spriteMaterial);
@@ -1078,21 +1081,28 @@ function createStarSystem(data, position) {
 
 // Load expedition data from JSON files
 async function loadExpeditionData() {
-    const sheets = ['setup', 'admin-manifest', 'route', 'fc-manifest', 'hauler-manifest'];
-    const expeditionData = {};
-    
-    for (const sheet of sheets) {
-        try {
-            const response = await fetch(`data/sheets/${sheet}.json`);
-            expeditionData[sheet] = await response.json();
-            console.log(`✓ Loaded ${sheet} data: ${expeditionData[sheet].length} rows`);
-        } catch (error) {
-            console.error(`❌ Error loading ${sheet} data:`, error);
-            expeditionData[sheet] = [];
-        }
+    try {
+        const [setupData, adminData, routeData, fcData, haulerData] = await Promise.all([
+            loadSheetData('setup'),
+            loadSheetData('admin-manifest'),
+            loadSheetData('route'),
+            loadSheetData('fc-manifest'),
+            loadSheetData('hauler-manifest')
+        ]);
+
+        // Store the data in global variables or process as needed
+        expeditionSetup = setupData;
+        adminManifest = adminData;
+        expeditionRoute = routeData;
+        fleetCarriers = fcData;
+        haulerManifest = haulerData;
+
+        console.log('Expedition data loaded successfully');
+        return true;
+    } catch (error) {
+        console.error('Error loading expedition data:', error);
+        return false;
     }
-    
-    return expeditionData;
 }
 
 // Load special systems from CSV
@@ -1256,4 +1266,39 @@ function createToggle(label, initialState, onChange) {
 }
 
 // Start initialization
-init(); 
+init();
+
+async function loadSheetData(sheetName) {
+    console.log(`Attempting to load ${sheetName} from Google Sheets API...`);
+    try {
+        // First try to load from Google Sheets API
+        const response = await fetch(`/api/sheets/${sheetName.toLowerCase()}`);
+        console.log(`API Response status for ${sheetName}:`, response.status);
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch from API: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(`Successfully loaded ${sheetName} from API:`, data.length, 'rows');
+        return data;
+    } catch (error) {
+        console.warn(`Failed to load ${sheetName} from API, error:`, error);
+        console.log(`Falling back to local JSON for ${sheetName}...`);
+        
+        try {
+            // Fallback to local JSON file
+            const fallbackResponse = await fetch(`data/sheets/${sheetName.toLowerCase()}.json`);
+            console.log(`Fallback response status for ${sheetName}:`, fallbackResponse.status);
+            
+            if (!fallbackResponse.ok) {
+                throw new Error(`Failed to load fallback JSON for ${sheetName}`);
+            }
+            const data = await fallbackResponse.json();
+            console.log(`Successfully loaded ${sheetName} from fallback:`, data.length, 'rows');
+            return data;
+        } catch (fallbackError) {
+            console.error(`Failed to load ${sheetName} from both API and fallback:`, fallbackError);
+            throw fallbackError;
+        }
+    }
+} 
