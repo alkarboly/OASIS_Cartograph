@@ -113,6 +113,57 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        .color-key {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 8px;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 13px;
+            max-width: 250px;
+        }
+
+        .color-key-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .color-key-header h3 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .color-key-content {
+            display: none;
+        }
+
+        .color-key-content.show {
+            display: block;
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+        }
+
+        .color-swatch {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -154,5 +205,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="js/main.js"></script>
+
+    <div class="color-key">
+        <div class="color-key-header">
+            <h3>Map Legend</h3>
+            <span class="toggle-btn">▼</span>
+        </div>
+        <div class="color-key-content">
+            <div class="color-item">
+                <div class="color-swatch" style="background: #ffff00"></div>
+                <span>Region Labels</span>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background: #00ffff"></div>
+                <span>Fleet Carriers</span>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background: #ff0000"></div>
+                <span>Special Systems</span>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background: #ffffff"></div>
+                <span>Unclaimed Stars</span>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background: #00ff00"></div>
+                <span>Completed Route</span>
+            </div>
+            <div class="color-item">
+                <div class="color-swatch" style="background: #ff8800"></div>
+                <span>Pending Route</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add this after your existing script tags
+        document.querySelector('.color-key-header').addEventListener('click', function() {
+            const content = document.querySelector('.color-key-content');
+            const toggleBtn = document.querySelector('.toggle-btn');
+            content.classList.toggle('show');
+            toggleBtn.textContent = content.classList.contains('show') ? '▼' : '▶';
+        });
+    </script>
 </body>
 </html> 
