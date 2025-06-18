@@ -1,12 +1,23 @@
+// Global variables
 let scene, camera, renderer, controls;
-let labels = [];
-const starSystems = new Map();
-const regionLabels = new Map();
+let starSystems = [];
+let labels = []; // Array to store label elements
+let regionLabels = new Map(); // Changed back to Map for region labels
 let showUnclaimedSystems = false;
+let showExpeditionRoute = true;
+let isAutoRotating = true;
+const autoRotateSpeed = 0.1; // Reduced from 0.5 to 0.1 degrees per second
+let loadingScreen, loadingProgress;
+let routeGroup;
+let combinedData = null; // Store combined data globally
+let expeditionRoute = null;
+let pulseTime = 0;
+let fontLoader;
+let font;
 
 // Loading screen elements
-const loadingScreen = document.getElementById('loading-screen');
-const loadingProgress = document.querySelector('.loading-progress');
+loadingScreen = document.getElementById('loading-screen');
+loadingProgress = document.querySelector('.loading-progress');
 
 // Initialize loading state
 let dataLoaded = false;
@@ -27,55 +38,68 @@ const SPECIAL_SYSTEMS = {
     'Running Man Sector YZ-Y c10': { category: 'Core-DEN', alias: 'DEN-HT', color: 0xFF4500 }
 };
 
+// Add event listeners immediately after DOM content loads
+document.addEventListener('DOMContentLoaded', () => {
+    const unclaimedToggle = document.getElementById('showUnclaimedSystems');
+    const routeToggle = document.getElementById('showExpeditionRoute');
+    
+    // Set initial state of toggles
+    unclaimedToggle.checked = showUnclaimedSystems;
+    routeToggle.checked = showExpeditionRoute;
+    
+    unclaimedToggle.addEventListener('change', (e) => {
+        console.log('Toggle changed:', e.target.checked);
+        showUnclaimedSystems = e.target.checked;
+        console.log('showUnclaimedSystems set to:', showUnclaimedSystems);
+        updateParticleVisibility();
+    });
+
+    routeToggle.addEventListener('change', (e) => {
+        console.log('Route toggle changed:', e.target.checked);
+        showExpeditionRoute = e.target.checked;
+        updateRouteVisibility();
+    });
+});
+
 async function init() {
     updateLoadingProgress('Setting up 3D environment...');
     
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
-    renderer = new THREE.WebGLRenderer();
+    scene.background = new THREE.Color(0x000000);
+
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000);
+    renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.screenSpacePanning = false;
+    controls.dampingFactor = 0.1;
+    controls.rotateSpeed = 0.3;
+    controls.zoomSpeed = 0.8;
+    controls.panSpeed = 0.5;
     controls.minDistance = 100;
     controls.maxDistance = 2000;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.5;
 
-    // Scene center coordinates
-    const SCENE_CENTER = {
-        x: 559.8125,
-        y: -373.125,
-        z: -1102.03125
-    };
-
-    // Set initial camera position relative to scene center
-    camera.position.set(
-        SCENE_CENTER.x,
-        SCENE_CENTER.y + 400, // Increased Y offset
-        SCENE_CENTER.z + 1200 // Increased Z offset for more zoom out
-    );
-    controls.target.set(SCENE_CENTER.x, SCENE_CENTER.y, SCENE_CENTER.z);
-
-    // Add ambient light
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-
-    // Add directional light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-
-    // Grid helper centered on SCENE_CENTER
-    const gridHelper = new THREE.GridHelper(2000, 20, 0x444444, 0x222222);
-    gridHelper.position.set(SCENE_CENTER.x, SCENE_CENTER.y, SCENE_CENTER.z);
-    scene.add(gridHelper);
-
-    // Load and parse the data
-    updateLoadingProgress('Loading star data...');
+    // Load font first
+    fontLoader = new THREE.FontLoader();
     try {
-        const [combinedData, expeditionData] = await Promise.all([
+        font = await new Promise((resolve, reject) => {
+            fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', 
+                resolve,
+                undefined,
+                reject
+            );
+        });
+    } catch (error) {
+        console.error('Error loading font:', error);
+    }
+
+    try {
+        // Load all data first
+        const [data, expeditionData, routeData, anchorData] = await Promise.all([
             fetch('data/combined_visualization_systems.json')
                 .then(response => {
                     if (!response.ok) {
@@ -83,104 +107,168 @@ async function init() {
                     }
                     return response.json();
                 }),
-            loadExpeditionData()
+            loadExpeditionData(),
+            loadExpeditionRoute(),
+            fetch('data/vis_anchor_systems.csv')
+                .then(response => response.text())
+                .then(text => {
+                    // Parse CSV
+                    const lines = text.split('\n');
+                    const headers = lines[0].split(',');
+                    return lines.slice(1).map(line => {
+                        const values = line.split(',');
+                        return {
+                            name: values[0].trim(),
+                            radius: parseFloat(values[1]),
+                            description: values[2] ? values[2].trim() : ''
+                        };
+                    });
+                })
         ]);
 
-        updateLoadingProgress('Creating visualization...');
-        
-        // Log dataset timestamp and size
-        const lastUpdated = new Date(combinedData.last_updated);
-        console.log(`Star system data last updated: ${lastUpdated.toLocaleString()}`);
-        console.log(`Total systems in dataset: ${combinedData.systems.length}`);
+        // Store the combined data globally
+        combinedData = data;
 
-        // Initialize particle system
-        initParticleSystem();
+        // Create a map of anchor systems with descriptions
+        const anchorSystems = new Map();
+        anchorData.forEach(anchor => {
+            if (anchor.description) {
+                anchorSystems.set(anchor.name, anchor);
+            }
+        });
+
+        // Find memorial system coordinates for camera positioning
+        const memorialSystem = data.systems.find(s => s.name === '2MASS J05405172-0226489');
+        if (memorialSystem) {
+            const position = parseCoordinates(memorialSystem);
+            if (position) {
+                camera.position.set(position.x + 500, position.y + 800, position.z + 500);
+                controls.target.copy(position);
+            }
+        }
+
+        // Create a map of completed systems from route data
+        const completedSystems = new Map();
+        routeData.forEach(waypoint => {
+            if (waypoint.system_name && waypoint['completed?_'] === 'TRUE') {
+                completedSystems.set(waypoint.system_name, true);
+            }
+        });
+
+        // Log dataset timestamp and size
+        const lastUpdated = new Date(data.last_updated);
+        console.log(`Star system data last updated: ${lastUpdated.toLocaleString()}`);
+        console.log(`Total systems in dataset: ${data.systems.length}`);
+
+        // Clear existing particle data
+        particlePositions.length = 0;
+        particleData.length = 0;
         
-        // Filter systems that don't require permits
-        const unlockedSystems = combinedData.systems.filter(system => system.requirePermit === false);
-        console.log(`Unlocked systems: ${unlockedSystems.length}`);
+        // Process star systems
+        updateLoadingProgress('Creating star systems...');
+        const allSystems = data.systems;
+        console.log(`Total systems to process: ${allSystems.length}`);
         
-        // Track processed anchor systems to avoid duplicates
-        const processedAnchors = new Set();
         let createdStars = 0;
         let particleStars = 0;
         
-        unlockedSystems.forEach(system => {
-            const position = parseCoordinates(system);
-            if (position) {
-                const star = createStarSystem(system, position);
-                if (star) {
-                    createdStars++;
-                } else {
-                    particleStars++;
-                }
-                
-                // Create region label only for anchor systems with non-empty descriptions
-                if (system.anchor_description && system.anchor_description.trim() !== '' && !processedAnchors.has(system.anchor_system)) {
-                    const label = createRegionLabel(position, system.anchor_description);
-                    regionLabels.set(system.anchor_system, {
-                        label: label,
-                        position: position.clone()
-                    });
-                    processedAnchors.add(system.anchor_system);
+        // First create all region labels
+        anchorData.forEach(anchor => {
+            if (anchor.description) {
+                // Trim any extra spaces from the system name
+                const systemName = anchor.name.trim();
+                const system = allSystems.find(s => s.name.trim() === systemName);
+                if (system) {
+                    const position = parseCoordinates(system);
+                    if (position) {
+                        const label = createRegionLabel(position, anchor.description);
+                        if (label) {
+                            regionLabels.set(systemName, {
+                                label: label,
+                                position: position.clone()
+                            });
+                        }
+                    }
                 }
             }
         });
 
-        // Update particle system after all particles are added
-        updateParticleSystem();
+        // After loading the data
+        console.log('Loaded anchor systems:', Array.from(anchorSystems.keys()));
+
+        // Process star systems
+        console.log('Looking for system LAM01 ORIONIS in data...');
+        const lamSystem = allSystems.find(s => s.name.includes('LAM') || s.name.includes('ORIO'));
+        if (lamSystem) {
+            console.log('Found potential match:', lamSystem.name);
+        }
+
+        allSystems.forEach(system => {
+            const position = parseCoordinates(system);
+            if (position) {
+                system.completed = completedSystems.has(system.name);
+                
+                const systemInfo = parseSystemInfo(system.information);
+                const isPopulated = systemInfo.population > 0;
+                const isSpecial = SPECIAL_SYSTEMS[system.name];
+
+                if (!isPopulated && !isSpecial) {
+                    particlePositions.push(position.x, position.y, position.z);
+                    particleData.push(system);
+                    particleStars++;
+                } else {
+                    const star = createStarSystem(system, position);
+                    if (star) {
+                        createdStars++;
+                    }
+                }
+
+                // Create region label if it's in anchor systems
+                // Try both exact match and case-insensitive match
+                const anchorSystem = anchorSystems.get(system.name) || 
+                                   Array.from(anchorSystems.entries())
+                                        .find(([key]) => key.toLowerCase() === system.name.toLowerCase() ||
+                                                       key.replace(/\s+/g, '') === system.name.replace(/\s+/g, ''))?.[1];
+                
+                if (anchorSystem && anchorSystem.description) {
+                    console.log('Creating region label for:', system.name, 'with description:', anchorSystem.description);
+                    const label = createRegionLabel(position, anchorSystem.description);
+                    if (label) {
+                        regionLabels.set(system.name, label);
+                    }
+                }
+            }
+        });
+
+        console.log(`Created ${createdStars} regular stars and ${particleStars} particle stars`);
+
+        // Initialize particle system with the new data
+        initParticleSystem();
         updateParticleVisibility();
+
+        // Create route visualization after all data is loaded and processed
+        updateLoadingProgress('Creating expedition route...');
+        createRouteVisualization(routeData);
 
         hideLoadingScreen();
     } catch (error) {
         console.error('Error loading data:', error);
         updateLoadingProgress('Error loading data. Please refresh the page.');
+        return;
     }
 
-    // Add auto-rotation until user interacts
-    let isAutoRotating = true;
-    const autoRotateSpeed = 0.5; // degrees per second
-
-    // Stop auto-rotation on any user interaction
+    // Add event listeners for controls
     controls.addEventListener('start', () => {
         isAutoRotating = false;
+        controls.autoRotate = false;
     });
 
-    function animate() {
-        requestAnimationFrame(animate);
-        
-        // Auto-rotate if enabled
-        if (isAutoRotating) {
-            const rotationMatrix = new THREE.Matrix4();
-            rotationMatrix.makeRotationY(autoRotateSpeed * Math.PI / 180);
-            
-            const cameraPosition = new THREE.Vector3();
-            camera.getWorldPosition(cameraPosition);
-            cameraPosition.sub(controls.target);
-            cameraPosition.applyMatrix4(rotationMatrix);
-            cameraPosition.add(controls.target);
-            camera.position.copy(cameraPosition);
-            
-            camera.lookAt(controls.target);
-        }
-        
-        controls.update();
-        updateLabels();
-        updateRegionLabels();
-        renderer.render(scene, camera);
-    }
-
-    // Also stop auto-rotation on mouse wheel
-    renderer.domElement.addEventListener('wheel', () => {
-        isAutoRotating = false;
-    });
-
-    // Stop auto-rotation on touch events for mobile
-    renderer.domElement.addEventListener('touchstart', () => {
-        isAutoRotating = false;
-    });
+    window.addEventListener('resize', onWindowResize, false);
 
     animate();
+
+    // Add styles after creating renderer
+    addStyles();
 }
 
 function updateLoadingProgress(message) {
@@ -283,6 +371,8 @@ function onWindowResize() {
 
 function updateLabels() {
     const tempV = new THREE.Vector3();
+    
+    // Update system labels
     labels.forEach(label => {
         // Get the position of the star in screen space
         tempV.copy(label.position);
@@ -292,16 +382,50 @@ function updateLabels() {
         const x = (tempV.x * 0.5 + 0.5) * window.innerWidth;
         const y = (-tempV.y * 0.5 + 0.5) * window.innerHeight;
 
-        // Check if the star is in front of the camera
-        if (tempV.z < 1) {
-            label.element.style.transform = `translate(-50%, -50%) translate(${x}px,${y}px)`;
+        // Check if the star is in front of the camera and within view bounds
+        if (tempV.z < 1 && x >= 0 && x <= window.innerWidth && y >= 0 && y <= window.innerHeight) {
+            const distance = camera.position.distanceTo(label.position);
             
-            // Show label only when star is visible and mouse is over it
-            const isClaimed = label.star.userData.claimed === 'True';
-            const isVisible = isClaimed || showUnclaimedSystems;
-            label.element.style.display = isVisible ? 'none' : 'none'; // Initially hide all labels
+            // Only show labels when zoomed in enough
+            if (distance < 300) {
+                label.element.style.display = 'block';
+                label.element.style.transform = `translate(-50%, -50%) translate(${x}px,${y}px)`;
+                
+                // Fade out as we zoom out
+                const opacity = Math.max(0, 1 - (distance - 100) / 200);
+                label.element.style.opacity = opacity;
+            } else {
+                label.element.style.display = 'none';
+            }
         } else {
             label.element.style.display = 'none';
+        }
+    });
+
+    // Update region labels
+    regionLabels.forEach((data, key) => {
+        tempV.copy(data.position);
+        tempV.project(camera);
+
+        const x = (tempV.x * 0.5 + 0.5) * window.innerWidth;
+        const y = (-tempV.y * 0.5 + 0.5) * window.innerHeight;
+
+        if (tempV.z < 1 && x >= 0 && x <= window.innerWidth && y >= 0 && y <= window.innerHeight) {
+            const distance = camera.position.distanceTo(data.position);
+            
+            // Show region labels from further away than star labels
+            if (distance < 500) {
+                data.label.element.style.display = 'block';
+                data.label.element.style.transform = `translate(-50%, -50%) translate(${x}px,${y}px)`;
+                
+                // Scale based on distance from camera
+                const scale = Math.max(0.5, Math.min(1.5, 1000 / distance));
+                data.label.element.style.transform += ` scale(${scale})`;
+            } else {
+                data.label.element.style.display = 'none';
+            }
+        } else {
+            data.label.element.style.display = 'none';
         }
     });
 }
@@ -309,8 +433,29 @@ function updateLabels() {
 function animate() {
     requestAnimationFrame(animate);
     controls.update();
-    updateLabels();
-    updateRegionLabels();
+    
+    // Update pulse animation with stronger effect
+    pulseTime += 0.05;  // Faster pulse
+    const pulseScale = 1 + Math.sin(pulseTime) * 0.5;  // Larger scale variation
+    
+    // Update pulsating markers
+    scene.traverse((object) => {
+        if (object.userData && object.userData.isInProgress) {
+            object.scale.set(pulseScale, pulseScale, pulseScale);
+            // Make the glow pulse too
+            if (object.children[0]) {
+                const glowScale = 1 + Math.sin(pulseTime + Math.PI) * 0.7;  // Inverse pulse for glow
+                object.children[0].scale.set(glowScale, glowScale, glowScale);
+                object.children[0].material.opacity = 0.3 + Math.sin(pulseTime) * 0.2;  // Pulse opacity
+            }
+        }
+        
+        // Make labels face camera
+        if (object.userData && object.userData.isLabel) {
+            object.lookAt(camera.position);
+        }
+    });
+    
     renderer.render(scene, camera);
 }
 
@@ -326,29 +471,21 @@ function onMouseMove(event) {
     // Update the picking ray with the camera and mouse position
     raycaster.setFromCamera(mouse, camera);
 
-    // Calculate objects intersecting the picking ray
-    const intersects = raycaster.intersectObjects(scene.children);
+    // Get all meshes in the scene
+    const meshes = scene.children.filter(child => child instanceof THREE.Mesh);
     
-    // First check regular star intersections
-    const starIntersect = intersects.find(intersect => intersect.object instanceof THREE.Mesh);
-    if (starIntersect) {
-        updateInfoPanel(starIntersect.object.userData);
-        return;
-    }
-    
-    // Then check particle intersections
-    const particleIntersect = intersects.find(intersect => intersect.object === particleSystem);
-    if (particleIntersect) {
-        const particleIndex = Math.floor(particleIntersect.index / 3);
-        const particleData = particleSystem.userData.particleData[particleIndex];
-        if (particleData) {
-            updateInfoPanel(particleData);
-            return;
+    // Only perform intersection test if there are meshes
+    if (meshes.length > 0) {
+        const intersects = raycaster.intersectObjects(meshes);
+        if (intersects.length > 0) {
+            const systemData = intersects[0].object.userData;
+            updateInfoPanel(systemData);
+        } else {
+            updateInfoPanel(null);
         }
+    } else {
+        updateInfoPanel(null);
     }
-    
-    // No intersections
-    updateInfoPanel(null);
 }
 
 window.addEventListener('mousemove', onMouseMove, false);
@@ -382,9 +519,15 @@ function initParticleSystem() {
         opacity: 0.8
     });
     
+    // Set positions if we have any
+    if (particlePositions.length > 0) {
+        geometry.setAttribute('position', new THREE.Float32BufferAttribute(particlePositions, 3));
+    }
+    
     particleSystem = new THREE.Points(geometry, material);
-    particleSystem.visible = showUnclaimedSystems; // Set initial visibility to match state
+    particleSystem.visible = showUnclaimedSystems;
     scene.add(particleSystem);
+    console.log('Particle system initialized with', particlePositions.length / 3, 'particles');
 }
 
 function updateParticleSystem() {
@@ -396,21 +539,34 @@ function updateParticleSystem() {
 }
 
 function updateParticleVisibility() {
+    console.log('Updating visibility. showUnclaimedSystems:', showUnclaimedSystems);
+    
     if (particleSystem) {
         particleSystem.visible = showUnclaimedSystems;
+        console.log('Particle system visibility:', particleSystem.visible);
     }
     
-    // Also update regular star visibility
+    let visibleCount = 0;
+    let totalCount = 0;
+    
+    // Update regular star visibility
     scene.traverse((object) => {
         if (object instanceof THREE.Mesh && !(object instanceof THREE.Points)) {
+            totalCount++;
             const systemData = object.userData;
-            const isPopulated = systemData.systemInfo && systemData.systemInfo.population > 0;
-            const isSpecial = SPECIAL_SYSTEMS[systemData.name];
+            const requiresPermit = systemData.requirePermit;
             
-            // Show if: it's populated/special OR unclaimed systems are shown
-            object.visible = (isPopulated || isSpecial || showUnclaimedSystems);
+            // Show if: doesn't require permit OR unclaimed systems are shown
+            object.visible = !requiresPermit || showUnclaimedSystems;
+            if (object.visible) visibleCount++;
+            
+            if (systemData.name) {
+                console.log(`System "${systemData.name}": requiresPermit=${requiresPermit}, visible=${object.visible}`);
+            }
         }
     });
+    
+    console.log(`Visibility updated: ${visibleCount}/${totalCount} stars visible`);
 }
 
 function parseCoordinates(data) {
@@ -439,133 +595,262 @@ function parseCoordinates(data) {
     }
 }
 
-function parseSystemInfo(infoStr) {
-    if (!infoStr || typeof infoStr !== 'object') return {};
-    return infoStr; // The information is now a proper JSON object
+function parseSystemInfo(information) {
+    try {
+        if (!information) {
+            return { population: 0 };
+        }
+        return {
+            population: information.population || 0
+        };
+    } catch (error) {
+        console.error('Error parsing system information:', error);
+        return { population: 0 };
+    }
 }
 
-function getStarColor(systemData) {
-    // Check if it's a special system
-    if (SPECIAL_SYSTEMS[systemData.name]) {
-        return SPECIAL_SYSTEMS[systemData.name].color;
+function getStarColor(data) {
+    // Check if the system is completed in the route
+    if (data.completed) {
+        return 0x00ff00; // Green for completed systems takes priority
     }
-
+    
+    // If not completed, check if it's a special system
+    if (SPECIAL_SYSTEMS[data.name]) {
+        return SPECIAL_SYSTEMS[data.name].color;
+    }
+    
     // Check population from the information field
     let population = 0;
-    if (systemData.information && typeof systemData.information === 'object') {
-        population = systemData.information.population || 0;
+    if (data.information && typeof data.information === 'object') {
+        population = data.information.population || 0;
     }
 
-    // White for no population, purple for populated systems
+    // Purple for populated systems, white for no population
     return population > 0 ? 0x800080 : 0xFFFFFF;
 }
 
-function createStarSystem(data, position) {
-    // Parse system info once
-    const systemInfo = parseSystemInfo(data.information);
-    const isPopulated = systemInfo.population > 0;
-    const isSpecial = SPECIAL_SYSTEMS[data.name];
-    
-    // Store common system data
-    const systemData = {
-        name: data.name,
-        bodyCount: data.bodyCount,
-        distance: data.distance,
-        special: SPECIAL_SYSTEMS[data.name],
-        systemInfo: systemInfo,
-        anchor_system: data.anchor_system,
-        anchor_description: data.anchor_description
-    };
+function createTextLabel(text, position, size = 1) {
+    if (!font) return null;
 
-    // Handle unpopulated systems as particles
-    if (!isPopulated && !isSpecial) {
-        particlePositions.push(position.x, position.y, position.z);
-        particleData.push(systemData);
-        return null;
-    }
+    // Create background plane first
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
     
-    // Create regular star for populated/special systems
-    const starSize = isSpecial ? 2.5 : 2;
-    const color = getStarColor(data);
+    // Measure text approximately
+    const fontSize = size * 7;
+    context.font = `${fontSize}px Arial`;
+    const textWidth = context.measureText(text).width;
     
-    // Create the star
-    const geometry = new THREE.SphereGeometry(starSize, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: color });
-    const star = new THREE.Mesh(geometry, material);
-    star.position.copy(position);
-    
-    // Add glow effect
-    const glowGeometry = new THREE.SphereGeometry(starSize * 1.5, 32, 32);
-    const glowMaterial = new THREE.MeshBasicMaterial({
-        color: color,
+    const backgroundGeometry = new THREE.PlaneGeometry(textWidth / 5, fontSize / 5);
+    const backgroundMaterial = new THREE.MeshBasicMaterial({
+        color: 0x000000,
         transparent: true,
-        opacity: 0.3
+        opacity: 0.6,
+        side: THREE.DoubleSide
     });
-    const glow = new THREE.Mesh(glowGeometry, glowMaterial);
-    star.add(glow);
+    const background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+
+    // Create text
+    const textGeometry = new THREE.TextGeometry(text, {
+        font: font,
+        size: size * 7,
+        height: 0.1,
+        curveSegments: 1,
+        bevelEnabled: false
+    });
+
+    textGeometry.computeBoundingBox();
+    const centerOffset = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
+
+    const textMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0xffffff,
+        transparent: true,
+        opacity: 1.0
+    });
+
+    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+    textMesh.position.x += centerOffset;
+
+    // Create a group to hold both background and text
+    const group = new THREE.Group();
+    background.position.z = -0.1;  // Slightly behind text
+    group.add(background);
+    group.add(textMesh);
     
-    // Store system data for hover info
-    star.userData = systemData;
-    
-    scene.add(star);
-    return star;
+    group.position.copy(position);
+    group.position.y += 10;
+    group.userData = { isLabel: true };
+
+    return group;
 }
 
-// Enhanced region label creation
 function createRegionLabel(position, text) {
-    const label = document.createElement('div');
-    label.className = 'region-label';
-    label.textContent = text;
-    label.style.position = 'absolute';
-    label.style.visibility = 'hidden';  // Start hidden
-    document.body.appendChild(label);
-    return label;
+    const label = createTextLabel(text, position, 2);
+    if (label) {
+        // Set the text mesh color to yellow (it's the second child in the group)
+        label.children[1].material.color.setHex(0xffff00);
+        scene.add(label);
+        return label;
+    }
+    return null;
 }
 
-// Improved label update function
-function updateRegionLabels() {
-    regionLabels.forEach((labelData, systemName) => {
-        const { label, position } = labelData;
+// Add this to your init function after creating the renderer
+function addStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .region-label {
+            z-index: 1000;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            transition: transform 0.1s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+async function loadExpeditionRoute() {
+    try {
+        const response = await fetch('data/sheets/route.json');
+        const routeData = await response.json();
+        return routeData;
+    } catch (error) {
+        console.error('Error loading route data:', error);
+        return [];
+    }
+}
+
+function createRouteVisualization(routeData) {
+    if (!combinedData || !combinedData.systems) {
+        console.error('Combined data not loaded yet');
+        return;
+    }
+
+    console.log('Creating route visualization with data:', routeData);
+    
+    // Remove existing route if any
+    if (expeditionRoute) {
+        scene.remove(expeditionRoute);
+    }
+
+    const points = [];
+    const routeSystems = new Map();
+
+    // First pass: collect coordinates for all systems in the route
+    routeData.forEach((waypoint, index) => {
+        // Skip empty or invalid entries
+        if (!waypoint.system_name || waypoint.system_name.trim() === '') {
+            return;
+        }
+
+        const systemName = waypoint.system_name;
+        console.log(`Processing waypoint ${index}: ${systemName}`);
         
-        // Convert 3D position to screen coordinates
-        const screenPosition = position.clone();
-        screenPosition.project(camera);
+        // Find the system in the combined data, regardless of permit status
+        const systemData = combinedData.systems.find(s => s.name === systemName);
         
-        // Calculate screen coordinates
-        const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
-        const y = (-screenPosition.y * 0.5 + 0.5) * window.innerHeight;
-        
-        // Check if the label should be visible
-        const isBehindCamera = screenPosition.z > 1;
-        const distanceToCamera = camera.position.distanceTo(position);
-        const isWithinRange = distanceToCamera < 1200; // Reduced from 1500
-        const isTooClose = distanceToCamera < 200; // Hide when too close
-        
-        if (!isBehindCamera && isWithinRange && !isTooClose) {
-            label.style.visibility = 'visible';
-            label.style.display = 'block';
-            
-            // Position the label with more offset
-            label.style.left = `${x}px`;
-            label.style.top = `${y - 60}px`;  // Increased offset from star
-            
-            // More subtle scaling
-            const scale = Math.max(0.7, Math.min(1.2, 1200 / distanceToCamera));
-            label.style.transform = `translate(-50%, -50%) scale(${scale})`;
-            
-            // More subtle opacity changes
-            const baseOpacity = 0.85;
-            const distanceOpacity = Math.max(0.5, Math.min(0.85, 1200 / distanceToCamera));
-            const finalOpacity = Math.min(baseOpacity, distanceOpacity);
-            label.style.opacity = finalOpacity;
-            
-            // Add subtle fade-in
-            label.style.transition = 'all 0.3s ease-out';
+        if (systemData) {
+            const position = parseCoordinates(systemData);
+            if (position) {
+                console.log(`Found coordinates for ${systemName}:`, position);
+                points.push(position);
+                routeSystems.set(systemName, {
+                    position,
+                    claimed: waypoint['claimed?_'] === 'TRUE',
+                    completed: waypoint['completed?_'] === 'TRUE',
+                    architect: waypoint['architect?_'],
+                    assignedFC: waypoint['assigned_fc'],
+                    requirePermit: systemData.requirePermit
+                });
+            } else {
+                console.warn(`Could not parse coordinates for ${systemName}`);
+            }
         } else {
-            label.style.visibility = 'hidden';
-            label.style.display = 'none';
+            console.warn(`System not found in combined data: ${systemName}`);
         }
     });
+
+    console.log(`Found coordinates for ${points.length} systems`);
+
+    if (points.length === 0) {
+        console.error('No valid points found for route visualization');
+        return;
+    }
+
+    // Create the route line
+    const routeGeometry = new THREE.BufferGeometry().setFromPoints(points);
+    const routeMaterial = new THREE.LineBasicMaterial({
+        color: 0x00ff00,
+        linewidth: 1,
+        opacity: 0.7,
+        transparent: true
+    });
+    
+    const routeLine = new THREE.Line(routeGeometry, routeMaterial);
+    
+    // Create markers for waypoints
+    const waypointGroup = new THREE.Group();
+    
+    routeSystems.forEach((data, systemName) => {
+        // Determine marker color and state
+        let markerColor;
+        const isInProgress = data.claimed && !data.completed;
+        
+        if (data.completed) {
+            markerColor = 0x00ff00; // Green for completed
+        } else if (isInProgress) {
+            markerColor = 0xffa500; // Orange for in-progress
+        } else if (data.requirePermit) {
+            markerColor = 0xff0000; // Red for permit required
+        } else {
+            markerColor = 0xffff00; // Yellow for unclaimed
+        }
+
+        // Create marker for waypoint - using same size as special stars (2.5)
+        const markerGeometry = new THREE.SphereGeometry(2.5, 32, 32);
+        const markerMaterial = new THREE.MeshBasicMaterial({
+            color: markerColor,
+            opacity: 0.8,
+            transparent: true
+        });
+        
+        const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+        marker.position.copy(data.position);
+        
+        // Store state for animation
+        marker.userData = {
+            isInProgress,
+            systemName,
+            ...data
+        };
+        
+        // Add glow effect - increased size to match special stars
+        const glowGeometry = new THREE.SphereGeometry(3.5, 32, 32);
+        const glowMaterial = new THREE.MeshBasicMaterial({
+            color: markerColor,
+            transparent: true,
+            opacity: 0.3
+        });
+        const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+        marker.add(glow);
+        
+        waypointGroup.add(marker);
+    });
+    
+    // Combine line and waypoints into a single group
+    expeditionRoute = new THREE.Group();
+    expeditionRoute.add(routeLine);
+    expeditionRoute.add(waypointGroup);
+    expeditionRoute.visible = showExpeditionRoute;
+    
+    scene.add(expeditionRoute);
+    console.log('Route visualization created and added to scene');
+}
+
+function updateRouteVisibility() {
+    if (expeditionRoute) {
+        expeditionRoute.visible = showExpeditionRoute;
+    }
 }
 
 // Update info panel on hover
@@ -606,14 +891,59 @@ function updateInfoPanel(systemData) {
     infoPanel.innerHTML = info;
 }
 
-// Add event listener for toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('showUnclaimedSystems');
-    toggle.addEventListener('change', (e) => {
-        showUnclaimedSystems = e.target.checked;
-        updateParticleVisibility();
-    });
-});
+function createStarSystem(data, position) {
+    try {
+        const systemInfo = parseSystemInfo(data.information);
+        const isPopulated = systemInfo.population > 0;
+        const isSpecial = SPECIAL_SYSTEMS[data.name];
+        
+        const systemData = {
+            name: data.name,
+            bodyCount: data.bodyCount,
+            distance: data.distance,
+            special: SPECIAL_SYSTEMS[data.name],
+            systemInfo: systemInfo,
+            anchor_system: data.anchor_system,
+            anchor_description: data.anchor_description,
+            requirePermit: data.requirePermit,
+            completed: data.completed,
+            isInProgress: data.isInProgress  // Make sure this is set in the data
+        };
+
+        const starSize = isSpecial ? 2.5 : (isPopulated ? 2.0 : 1.5);
+        const color = getStarColor(data);
+        
+        const geometry = new THREE.SphereGeometry(starSize, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ 
+            color: color,
+            opacity: 0.8,
+            transparent: true
+        });
+        const star = new THREE.Mesh(geometry, material);
+        star.position.copy(position);
+        
+        // Enhanced glow effect
+        const glowGeometry = new THREE.SphereGeometry(starSize * 2, 32, 32);  // Larger glow
+        const glowMaterial = new THREE.MeshBasicMaterial({
+            color: color,
+            transparent: true,
+            opacity: 0.3
+        });
+        const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+        star.add(glow);
+        
+        star.userData = systemData;
+        if (systemData.isInProgress) {
+            star.userData.isInProgress = true;
+        }
+        
+        scene.add(star);
+        return star;
+    } catch (error) {
+        console.error(`Error creating star system: ${data.name}`, error);
+        return null;
+    }
+}
 
 // Start initialization
 init(); 
