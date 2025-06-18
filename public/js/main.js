@@ -75,199 +75,241 @@ async function init() {
     scene.background = new THREE.Color(0x000000);
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000000);
-    renderer = new THREE.WebGLRenderer({ 
-        antialias: true,
-        logarithmicDepthBuffer: true // Better depth handling
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.sortObjects = false; // Disable automatic sorting
-    document.body.appendChild(renderer.domElement);
-
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.1;
-    controls.rotateSpeed = 0.3;
-    controls.zoomSpeed = 0.8;
-    controls.panSpeed = 0.5;
-    controls.minDistance = 100;
-    controls.maxDistance = 2000;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.5;
-
-    // Load font first
-    fontLoader = new THREE.FontLoader();
+    
+    // Check for WebGL support first
     try {
-        font = await new Promise((resolve, reject) => {
-            fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', 
-                resolve,
-                undefined,
-                reject
-            );
-        });
-    } catch (error) {
-        console.error('Error loading font:', error);
-    }
-
-    try {
-        // Load special systems first
-        await loadSpecialSystems();
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        if (!gl) {
+            throw new Error('WebGL not supported');
+        }
         
-        // Load all data first
-        const [data, expeditionData, routeData, anchorData] = await Promise.all([
-            fetch('data/combined_visualization_systems.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                }),
-            loadExpeditionData(),
-            loadExpeditionRoute(),
-            fetch('data/vis_anchor_systems.csv')
-                .then(response => response.text())
-                .then(text => {
-                    // Parse CSV
-                    const lines = text.split('\n');
-                    const headers = lines[0].split(',');
-                    return lines.slice(1).map(line => {
-                        const values = line.split(',');
-                        return {
-                            name: values[0].trim(),
-                            radius: parseFloat(values[1]),
-                            description: values[2] ? values[2].trim() : ''
-                        };
-                    });
-                })
-        ]);
-
-        // Store the combined data globally
-        combinedData = data;
-
-        // Create a map of anchor systems with descriptions
-        const anchorSystems = new Map();
-        anchorData.forEach(anchor => {
-            if (anchor.description) {
-                anchorSystems.set(anchor.name, anchor);
-            }
+        // Create renderer with more conservative settings
+        renderer = new THREE.WebGLRenderer({ 
+            canvas: canvas,
+            antialias: false, // Disable antialiasing for better performance
+            precision: 'mediump', // Use medium precision
+            powerPreference: 'default',
+            logarithmicDepthBuffer: false, // Disable log depth buffer
+            failIfMajorPerformanceCaveat: false
         });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio
+        document.body.appendChild(renderer.domElement);
+        
+        // Rest of initialization code...
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.1;
+        controls.rotateSpeed = 0.3;
+        controls.zoomSpeed = 0.8;
+        controls.panSpeed = 0.5;
+        controls.minDistance = 100;
+        controls.maxDistance = 2000;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
 
-        // Find memorial system coordinates for camera positioning
-        const memorialSystem = data.systems.find(s => s.name === '2MASS J05405172-0226489');
-        if (memorialSystem) {
-            const position = parseCoordinates(memorialSystem);
-            if (position) {
-                camera.position.set(position.x + 500, position.y + 800, position.z + 500);
-                controls.target.copy(position);
-            }
+        // Load font first
+        fontLoader = new THREE.FontLoader();
+        try {
+            font = await new Promise((resolve, reject) => {
+                fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', 
+                    resolve,
+                    undefined,
+                    reject
+                );
+            });
+        } catch (error) {
+            console.error('Error loading font:', error);
         }
 
-        // Create a map of completed systems from route data
-        const completedSystems = new Map();
-        routeData.forEach(waypoint => {
-            if (waypoint.system_name && waypoint['completed?_'] === 'TRUE') {
-                completedSystems.set(waypoint.system_name, true);
+        try {
+            // Load special systems first
+            await loadSpecialSystems();
+            
+            // Load all data first
+            const [data, expeditionData, routeData, anchorData] = await Promise.all([
+                fetch('data/combined_visualization_systems.json')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    }),
+                loadExpeditionData(),
+                loadExpeditionRoute(),
+                fetch('data/vis_anchor_systems.csv')
+                    .then(response => response.text())
+                    .then(text => {
+                        // Parse CSV
+                        const lines = text.split('\n');
+                        const headers = lines[0].split(',');
+                        return lines.slice(1).map(line => {
+                            const values = line.split(',');
+                            return {
+                                name: values[0].trim(),
+                                radius: parseFloat(values[1]),
+                                description: values[2] ? values[2].trim() : ''
+                            };
+                        });
+                    })
+            ]);
+
+            // Store the combined data globally
+            combinedData = data;
+
+            // Create a map of anchor systems with descriptions
+            const anchorSystems = new Map();
+            anchorData.forEach(anchor => {
+                if (anchor.description) {
+                    anchorSystems.set(anchor.name, anchor);
+                }
+            });
+
+            // Find memorial system coordinates for camera positioning
+            const memorialSystem = data.systems.find(s => s.name === '2MASS J05405172-0226489');
+            if (memorialSystem) {
+                const position = parseCoordinates(memorialSystem);
+                if (position) {
+                    camera.position.set(position.x + 500, position.y + 800, position.z + 500);
+                    controls.target.copy(position);
+                }
             }
-        });
 
-        // Log dataset timestamp and size
-        const lastUpdated = new Date(data.last_updated);
-        console.log(`Star system data last updated: ${lastUpdated.toLocaleString()}`);
-        console.log(`Total systems in dataset: ${data.systems.length}`);
+            // Create a map of completed systems from route data
+            const completedSystems = new Map();
+            routeData.forEach(waypoint => {
+                if (waypoint.system_name && waypoint['completed?_'] === 'TRUE') {
+                    completedSystems.set(waypoint.system_name, true);
+                }
+            });
 
-        // Clear existing particle data
-        particlePositions.length = 0;
-        particleData.length = 0;
-        
-        // Process star systems
-        updateLoadingProgress('Creating star systems...');
-        const allSystems = data.systems;
-        console.log(`Total systems to process: ${allSystems.length}`);
-        
-        let createdStars = 0;
-        let particleStars = 0;
-        
-        // First create all region labels
-        anchorData.forEach(anchor => {
-            if (anchor.description) {
-                // Trim any extra spaces from the system name
-                const systemName = anchor.name.trim();
-                const system = allSystems.find(s => s.name.trim() === systemName);
-                if (system) {
-                    const position = parseCoordinates(system);
-                    if (position) {
-                        const label = createRegionLabel(position, anchor.description);
-                        if (label) {
-                            regionLabels.set(systemName, {
-                                label: label,
-                                position: position.clone()
-                            });
+            // Log dataset timestamp and size
+            const lastUpdated = new Date(data.last_updated);
+            console.log(`Star system data last updated: ${lastUpdated.toLocaleString()}`);
+            console.log(`Total systems in dataset: ${data.systems.length}`);
+
+            // Clear existing particle data
+            particlePositions.length = 0;
+            particleData.length = 0;
+            
+            // Process star systems
+            updateLoadingProgress('Creating star systems...');
+            const allSystems = data.systems;
+            console.log(`Total systems to process: ${allSystems.length}`);
+            
+            let createdStars = 0;
+            let particleStars = 0;
+            
+            // First create all region labels
+            anchorData.forEach(anchor => {
+                if (anchor.description) {
+                    // Trim any extra spaces from the system name
+                    const systemName = anchor.name.trim();
+                    const system = allSystems.find(s => s.name.trim() === systemName);
+                    if (system) {
+                        const position = parseCoordinates(system);
+                        if (position) {
+                            const label = createRegionLabel(position, anchor.description);
+                            if (label) {
+                                regionLabels.set(systemName, {
+                                    label: label,
+                                    position: position.clone()
+                                });
+                            }
                         }
                     }
                 }
+            });
+
+            // After loading the data
+            console.log('Loaded anchor systems:', Array.from(anchorSystems.keys()));
+
+            // Process star systems
+            console.log('Looking for system LAM01 ORIONIS in data...');
+            const lamSystem = allSystems.find(s => s.name.includes('LAM') || s.name.includes('ORIO'));
+            if (lamSystem) {
+                console.log('Found potential match:', lamSystem.name);
             }
-        });
 
-        // After loading the data
-        console.log('Loaded anchor systems:', Array.from(anchorSystems.keys()));
+            allSystems.forEach(system => {
+                const position = parseCoordinates(system);
+                if (position) {
+                    system.completed = completedSystems.has(system.name);
+                    
+                    const systemInfo = parseSystemInfo(system.information);
+                    const isPopulated = systemInfo.population > 0;
+                    const isSpecial = SPECIAL_SYSTEMS[system.name];
 
-        // Process star systems
-        console.log('Looking for system LAM01 ORIONIS in data...');
-        const lamSystem = allSystems.find(s => s.name.includes('LAM') || s.name.includes('ORIO'));
-        if (lamSystem) {
-            console.log('Found potential match:', lamSystem.name);
+                    if (!isPopulated && !isSpecial) {
+                        particlePositions.push(position.x, position.y, position.z);
+                        particleData.push(system);
+                        particleStars++;
+                    } else {
+                        const star = createStarSystem(system, position);
+                        if (star) {
+                            createdStars++;
+                        }
+                    }
+
+                    // Create region label if it's in anchor systems
+                    // Try both exact match and case-insensitive match
+                    const anchorSystem = anchorSystems.get(system.name) || 
+                                       Array.from(anchorSystems.entries())
+                                            .find(([key]) => key.toLowerCase() === system.name.toLowerCase() ||
+                                                           key.replace(/\s+/g, '') === system.name.replace(/\s+/g, ''))?.[1];
+                    
+                    if (anchorSystem && anchorSystem.description) {
+                        console.log('Creating region label for:', system.name, 'with description:', anchorSystem.description);
+                        const label = createRegionLabel(position, anchorSystem.description);
+                        if (label) {
+                            regionLabels.set(system.name, label);
+                        }
+                    }
+                }
+            });
+
+            console.log(`Created ${createdStars} regular stars and ${particleStars} particle stars`);
+
+            // Initialize particle system with the new data
+            initParticleSystem();
+            updateParticleVisibility();
+
+            // Create route visualization after all data is loaded and processed
+            updateLoadingProgress('Creating expedition route...');
+            createRouteVisualization(routeData);
+
+            hideLoadingScreen();
+        } catch (error) {
+            console.error('Error loading data:', error);
+            updateLoadingProgress('Error loading data. Please refresh the page.');
+            return;
         }
-
-        allSystems.forEach(system => {
-            const position = parseCoordinates(system);
-            if (position) {
-                system.completed = completedSystems.has(system.name);
-                
-                const systemInfo = parseSystemInfo(system.information);
-                const isPopulated = systemInfo.population > 0;
-                const isSpecial = SPECIAL_SYSTEMS[system.name];
-
-                if (!isPopulated && !isSpecial) {
-                    particlePositions.push(position.x, position.y, position.z);
-                    particleData.push(system);
-                    particleStars++;
-                } else {
-                    const star = createStarSystem(system, position);
-                    if (star) {
-                        createdStars++;
-                    }
-                }
-
-                // Create region label if it's in anchor systems
-                // Try both exact match and case-insensitive match
-                const anchorSystem = anchorSystems.get(system.name) || 
-                                   Array.from(anchorSystems.entries())
-                                        .find(([key]) => key.toLowerCase() === system.name.toLowerCase() ||
-                                                       key.replace(/\s+/g, '') === system.name.replace(/\s+/g, ''))?.[1];
-                
-                if (anchorSystem && anchorSystem.description) {
-                    console.log('Creating region label for:', system.name, 'with description:', anchorSystem.description);
-                    const label = createRegionLabel(position, anchorSystem.description);
-                    if (label) {
-                        regionLabels.set(system.name, label);
-                    }
-                }
-            }
-        });
-
-        console.log(`Created ${createdStars} regular stars and ${particleStars} particle stars`);
-
-        // Initialize particle system with the new data
-        initParticleSystem();
-        updateParticleVisibility();
-
-        // Create route visualization after all data is loaded and processed
-        updateLoadingProgress('Creating expedition route...');
-        createRouteVisualization(routeData);
-
-        hideLoadingScreen();
     } catch (error) {
-        console.error('Error loading data:', error);
-        updateLoadingProgress('Error loading data. Please refresh the page.');
+        console.error('Failed to initialize WebGL:', error);
+        const errorMessage = document.createElement('div');
+        errorMessage.style.position = 'fixed';
+        errorMessage.style.top = '50%';
+        errorMessage.style.left = '50%';
+        errorMessage.style.transform = 'translate(-50%, -50%)';
+        errorMessage.style.color = 'white';
+        errorMessage.style.background = 'rgba(0, 0, 0, 0.8)';
+        errorMessage.style.padding = '20px';
+        errorMessage.style.borderRadius = '10px';
+        errorMessage.style.textAlign = 'center';
+        errorMessage.innerHTML = `
+            <h2>WebGL Error</h2>
+            <p>Your browser doesn't support WebGL or it's disabled.</p>
+            <p>Please try:</p>
+            <ul style="text-align: left;">
+                <li>Updating your browser</li>
+                <li>Enabling hardware acceleration</li>
+                <li>Using a different browser</li>
+                <li>Updating your graphics drivers</li>
+            </ul>
+        `;
+        document.body.appendChild(errorMessage);
         return;
     }
 
@@ -448,28 +490,7 @@ function animate() {
     requestAnimationFrame(animate);
     
     controls.update();
-    
-    scene.traverse((object) => {
-        if (object.userData && object.userData.isInProgress) {
-            const time = Date.now() * 0.001;
-            const scale = 1 + Math.sin(time * 2) * 0.1;
-            object.scale.set(scale, scale, scale);
-        }
-        
-        if (object.userData && object.userData.isLabel) {
-            object.quaternion.copy(camera.quaternion);
-            
-            const distance = camera.position.distanceTo(object.position);
-            const baseScale = object.userData.isFC ? 60 : 80; // Much larger base scale
-            const scale = Math.max(0.8, Math.min(1.5, 4000 / distance)) * baseScale;
-            object.scale.set(scale * 2, scale, 1);
-            
-            // Adjust fade distances for better visibility
-            const opacity = Math.min(1, Math.max(0, (distance - 200) / 400));
-            object.material.opacity = opacity;
-        }
-    });
-    
+    updateLabelPositions();
     renderer.render(scene, camera);
 }
 
@@ -598,30 +619,30 @@ function createTextSprite(text) {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     
-    // Ultra-high resolution canvas
-    canvas.width = 4096;
-    canvas.height = 2048;
+    // More reasonable canvas resolution
+    canvas.width = 2048;
+    canvas.height = 1024;
     
     // Background
     context.fillStyle = 'rgba(0, 0, 0, 0.85)';
     context.strokeStyle = '#ffff00';
-    context.lineWidth = 16; // Much thicker outline
+    context.lineWidth = 8;
     
-    // Huge text settings
-    context.font = 'bold 192px Arial'; // Much larger font
+    // Text settings
+    context.font = 'bold 96px Arial';
     const textWidth = context.measureText(text).width;
-    const padding = 120; // Much larger padding
+    const padding = 60;
     const boxWidth = textWidth + (padding * 2);
-    const boxHeight = 280; // Much taller box
+    const boxHeight = 140;
     
     // Draw rounded rectangle background
     const x = (canvas.width - boxWidth) / 2;
     const y = (canvas.height - boxHeight) / 2;
-    const radius = 40; // Larger rounded corners
+    const radius = 20;
     
-    // Enhanced outer glow
+    // Outer glow
     context.shadowColor = '#ffff00';
-    context.shadowBlur = 60;
+    context.shadowBlur = 30;
     context.shadowOffsetX = 0;
     context.shadowOffsetY = 0;
     
@@ -641,16 +662,16 @@ function createTextSprite(text) {
     context.shadowBlur = 0;
     context.stroke();
     
-    // Draw text with enhanced visibility
+    // Draw text
     context.fillStyle = '#ffff00';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
     
-    // Text shadow for better contrast
+    // Text shadow
     context.shadowColor = 'rgba(0, 0, 0, 0.8)';
-    context.shadowBlur = 16;
-    context.shadowOffsetX = 8;
-    context.shadowOffsetY = 8;
+    context.shadowBlur = 8;
+    context.shadowOffsetX = 4;
+    context.shadowOffsetY = 4;
     
     context.fillText(text, canvas.width / 2, canvas.height / 2);
     
@@ -667,19 +688,119 @@ function createTextSprite(text) {
     });
     
     const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.scale.set(80, 40, 1); // Much larger scale
+    // Increase the scale significantly but not to the point of crashing
+    sprite.scale.set(320, 160, 1);
     sprite.renderOrder = 999999;
     
     return sprite;
 }
 
+// This function updates the position of all HTML labels in sync with the 3D scene
+function updateLabelPositions() {
+    // Find all elements with class 'region-label'
+    const labels = document.querySelectorAll('.region-label');
+    
+    labels.forEach(label => {
+        if (label.userData && label.userData.position) {
+            // Get the stored 3D position from when we created the label
+            const pos = label.userData.position.clone();
+            
+            // Project the 3D position to 2D screen space
+            // This converts from 3D coordinates to normalized device coordinates (NDC)
+            const vector = pos.project(camera);
+            
+            // Convert NDC to pixel coordinates
+            // NDC goes from -1 to +1, we need to map this to screen pixels
+            const widthHalf = window.innerWidth / 2;
+            const heightHalf = window.innerHeight / 2;
+            const x = (vector.x * widthHalf) + widthHalf;
+            const y = -(vector.y * heightHalf) + heightHalf;
+            
+            // Different height offsets for different regions
+            let yOffset = 25; // Default offset (halved from 50)
+            const text = label.textContent;
+            
+            if (text.includes('Shoulder Of Orion') || text.includes('SoO')) {
+                yOffset = 50; // Halved from 100
+            } else if (text.includes('OASIS') || text.includes('OSC I')) {
+                yOffset = 40; // Halved from 80
+            } else if (text.includes('Lambda Orionis') || text.includes('OSC II')) {
+                yOffset = 45; // Halved from 90
+            }
+            
+            // Only show labels that are in front of the camera
+            // vector.z < 1 means the point is in front of the near plane of the camera
+            if (vector.z < 1) {
+                label.style.display = 'block';
+                label.style.left = `${x}px`;
+                label.style.top = `${y - yOffset}px`;
+            } else {
+                label.style.display = 'none';
+            }
+        }
+    });
+}
+
+// This function creates the CSS styles for our labels
+function addStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .region-label {
+            /* Position the label absolutely within the viewport */
+            position: absolute;
+            
+            /* Text styling */
+            font-family: Arial, sans-serif;
+            font-size: 8px;          /* Halved from 16px */
+            font-weight: bold;
+            color: #ffff00;          /* Bright yellow color */
+            
+            /* Background and border */
+            background: rgba(0, 0, 0, 0.8);  /* Semi-transparent black */
+            padding: 3px 6px;        /* Halved from 6px 12px */
+            border-radius: 2px;      /* Halved from 4px */
+            border: 1px solid #ffff00;
+            
+            /* Effects */
+            text-shadow: 0 0 3px rgba(0,0,0,0.5);  /* Text glow */
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);  /* Box glow */
+            
+            /* Prevent text wrapping */
+            white-space: nowrap;
+            
+            /* Center the label on its position */
+            transform: translate(-50%, -50%);
+            
+            /* Smooth transitions when updating position */
+            transition: all 0.1s ease-out;
+            
+            /* Make sure labels appear above the 3D scene */
+            z-index: 1000;
+            
+            /* Prevent labels from intercepting mouse events */
+            pointer-events: none;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// This function creates a new label for a region
 function createRegionLabel(position, text) {
-    const label = createTextSprite(text);
-    label.position.copy(position);
-    label.position.y += 12; // Increased offset for better visibility
-    label.userData = { isLabel: true };
-    scene.add(label);
-    return label;
+    // Create the HTML element
+    const labelDiv = document.createElement('div');
+    labelDiv.className = 'region-label';
+    labelDiv.textContent = text;
+    
+    // Store the 3D position for later use in updateLabelPositions
+    labelDiv.userData = {
+        position: position.clone(),
+        isLabel: true
+    };
+    
+    // Add to document
+    document.body.appendChild(labelDiv);
+    
+    return labelDiv;
 }
 
 function createFCLabel(position, fc) {
@@ -690,19 +811,6 @@ function createFCLabel(position, fc) {
     label.userData = { isLabel: true, isFC: true };
     scene.add(label);
     return label;
-}
-
-// Add this to your init function after creating the renderer
-function addStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-        .region-label {
-            z-index: 1000;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
-            transition: transform 0.1s ease-out;
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 async function loadExpeditionRoute() {
