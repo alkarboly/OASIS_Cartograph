@@ -15,6 +15,9 @@ let pulseTime = 0;
 let fontLoader;
 let font;
 
+// Add global variable for label visibility
+let showLabels = true;
+
 // Loading screen elements
 loadingScreen = document.getElementById('loading-screen');
 loadingProgress = document.querySelector('.loading-progress');
@@ -28,25 +31,29 @@ let particleSystem;
 const particlePositions = [];
 const particleData = [];
 
-// Special systems configuration
-const SPECIAL_SYSTEMS = {
-    '2MASS J05405172-0226489': { category: 'Memorial', color: 0xFFD700 },  // Gold
-    'MSJ2009 L1630MIR-43': { category: 'Core-DEN', alias: 'DEN-Ref', color: 0xFF4500 },  // Orange-Red
-    '2MASS J05403931-0226460': { category: 'Core-DEN', alias: 'DEN-Mil/Ref', color: 0xFF4500 },
-    'MSJ2009 L1630MIR-54': { category: 'Core-DEN', alias: 'DEN-Ind', color: 0xFF4500 },
-    '2MASS J05412214-0216441': { category: 'Core-DEN', alias: 'DEN-Agg', color: 0xFF4500 },
-    'Running Man Sector YZ-Y c10': { category: 'Core-DEN', alias: 'DEN-HT', color: 0xFF4500 }
-};
+// Initialize special systems from CSV
+const SPECIAL_SYSTEMS = {};
 
 // Add event listeners immediately after DOM content loads
 document.addEventListener('DOMContentLoaded', () => {
     const unclaimedToggle = document.getElementById('showUnclaimedSystems');
     const routeToggle = document.getElementById('showExpeditionRoute');
+    const labelToggle = document.getElementById('showLabels');
     
     // Set initial state of toggles
     unclaimedToggle.checked = showUnclaimedSystems;
     routeToggle.checked = showExpeditionRoute;
+    labelToggle.checked = showLabels;
     
+    labelToggle.addEventListener('change', (e) => {
+        showLabels = e.target.checked;
+        scene.traverse((object) => {
+            if (object.userData && object.userData.isLabel) {
+                object.visible = showLabels;
+            }
+        });
+    });
+
     unclaimedToggle.addEventListener('change', (e) => {
         console.log('Toggle changed:', e.target.checked);
         showUnclaimedSystems = e.target.checked;
@@ -67,9 +74,13 @@ async function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
 
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000);
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000000);
+    renderer = new THREE.WebGLRenderer({ 
+        antialias: true,
+        logarithmicDepthBuffer: true // Better depth handling
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.sortObjects = false; // Disable automatic sorting
     document.body.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -98,6 +109,9 @@ async function init() {
     }
 
     try {
+        // Load special systems first
+        await loadSpecialSystems();
+        
         // Load all data first
         const [data, expeditionData, routeData, anchorData] = await Promise.all([
             fetch('data/combined_visualization_systems.json')
@@ -432,81 +446,31 @@ function updateLabels() {
 
 function animate() {
     requestAnimationFrame(animate);
+    
     controls.update();
     
-    // Update pulse animation with stronger effect
-    pulseTime += 0.05;  // Faster pulse
-    const pulseScale = 1 + Math.sin(pulseTime) * 0.5;  // Larger scale variation
-    
-    // Update pulsating markers
     scene.traverse((object) => {
         if (object.userData && object.userData.isInProgress) {
-            object.scale.set(pulseScale, pulseScale, pulseScale);
-            // Make the glow pulse too
-            if (object.children[0]) {
-                const glowScale = 1 + Math.sin(pulseTime + Math.PI) * 0.7;  // Inverse pulse for glow
-                object.children[0].scale.set(glowScale, glowScale, glowScale);
-                object.children[0].material.opacity = 0.3 + Math.sin(pulseTime) * 0.2;  // Pulse opacity
-            }
+            const time = Date.now() * 0.001;
+            const scale = 1 + Math.sin(time * 2) * 0.1;
+            object.scale.set(scale, scale, scale);
         }
         
-        // Make labels face camera
         if (object.userData && object.userData.isLabel) {
-            object.lookAt(camera.position);
+            object.quaternion.copy(camera.quaternion);
+            
+            const distance = camera.position.distanceTo(object.position);
+            const baseScale = object.userData.isFC ? 60 : 80; // Much larger base scale
+            const scale = Math.max(0.8, Math.min(1.5, 4000 / distance)) * baseScale;
+            object.scale.set(scale * 2, scale, 1);
+            
+            // Adjust fade distances for better visibility
+            const opacity = Math.min(1, Math.max(0, (distance - 200) / 400));
+            object.material.opacity = opacity;
         }
     });
     
     renderer.render(scene, camera);
-}
-
-// Raycaster for mouse interaction
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-
-function onMouseMove(event) {
-    // Calculate mouse position in normalized device coordinates
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    // Update the picking ray with the camera and mouse position
-    raycaster.setFromCamera(mouse, camera);
-
-    // Get all meshes in the scene
-    const meshes = scene.children.filter(child => child instanceof THREE.Mesh);
-    
-    // Only perform intersection test if there are meshes
-    if (meshes.length > 0) {
-        const intersects = raycaster.intersectObjects(meshes);
-        if (intersects.length > 0) {
-            const systemData = intersects[0].object.userData;
-            updateInfoPanel(systemData);
-        } else {
-            updateInfoPanel(null);
-        }
-    } else {
-        updateInfoPanel(null);
-    }
-}
-
-window.addEventListener('mousemove', onMouseMove, false);
-
-// Load expedition data from JSON files
-async function loadExpeditionData() {
-    const sheets = ['setup', 'admin-manifest', 'route', 'fc-manifest', 'hauler-manifest'];
-    const expeditionData = {};
-    
-    for (const sheet of sheets) {
-        try {
-            const response = await fetch(`data/sheets/${sheet}.json`);
-            expeditionData[sheet] = await response.json();
-            console.log(`✓ Loaded ${sheet} data: ${expeditionData[sheet].length} rows`);
-        } catch (error) {
-            console.error(`❌ Error loading ${sheet} data:`, error);
-            expeditionData[sheet] = [];
-        }
-    }
-    
-    return expeditionData;
 }
 
 function initParticleSystem() {
@@ -616,7 +580,7 @@ function getStarColor(data) {
     }
     
     // If not completed, check if it's a special system
-    if (SPECIAL_SYSTEMS[data.name]) {
+    if (data.name && SPECIAL_SYSTEMS[data.name]) {
         return SPECIAL_SYSTEMS[data.name].color;
     }
     
@@ -630,70 +594,102 @@ function getStarColor(data) {
     return population > 0 ? 0x800080 : 0xFFFFFF;
 }
 
-function createTextLabel(text, position, size = 1) {
-    if (!font) return null;
-
-    // Create background plane first
+function createTextSprite(text) {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     
-    // Measure text approximately
-    const fontSize = size * 7;
-    context.font = `${fontSize}px Arial`;
+    // Ultra-high resolution canvas
+    canvas.width = 4096;
+    canvas.height = 2048;
+    
+    // Background
+    context.fillStyle = 'rgba(0, 0, 0, 0.85)';
+    context.strokeStyle = '#ffff00';
+    context.lineWidth = 16; // Much thicker outline
+    
+    // Huge text settings
+    context.font = 'bold 192px Arial'; // Much larger font
     const textWidth = context.measureText(text).width;
+    const padding = 120; // Much larger padding
+    const boxWidth = textWidth + (padding * 2);
+    const boxHeight = 280; // Much taller box
     
-    const backgroundGeometry = new THREE.PlaneGeometry(textWidth / 5, fontSize / 5);
-    const backgroundMaterial = new THREE.MeshBasicMaterial({
-        color: 0x000000,
-        transparent: true,
-        opacity: 0.6,
-        side: THREE.DoubleSide
-    });
-    const background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
-
-    // Create text
-    const textGeometry = new THREE.TextGeometry(text, {
-        font: font,
-        size: size * 7,
-        height: 0.1,
-        curveSegments: 1,
-        bevelEnabled: false
-    });
-
-    textGeometry.computeBoundingBox();
-    const centerOffset = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
-
-    const textMaterial = new THREE.MeshBasicMaterial({ 
-        color: 0xffffff,
-        transparent: true,
-        opacity: 1.0
-    });
-
-    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-    textMesh.position.x += centerOffset;
-
-    // Create a group to hold both background and text
-    const group = new THREE.Group();
-    background.position.z = -0.1;  // Slightly behind text
-    group.add(background);
-    group.add(textMesh);
+    // Draw rounded rectangle background
+    const x = (canvas.width - boxWidth) / 2;
+    const y = (canvas.height - boxHeight) / 2;
+    const radius = 40; // Larger rounded corners
     
-    group.position.copy(position);
-    group.position.y += 10;
-    group.userData = { isLabel: true };
-
-    return group;
+    // Enhanced outer glow
+    context.shadowColor = '#ffff00';
+    context.shadowBlur = 60;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+    
+    context.beginPath();
+    context.moveTo(x + radius, y);
+    context.lineTo(x + boxWidth - radius, y);
+    context.quadraticCurveTo(x + boxWidth, y, x + boxWidth, y + radius);
+    context.lineTo(x + boxWidth, y + boxHeight - radius);
+    context.quadraticCurveTo(x + boxWidth, y + boxHeight, x + boxWidth - radius, y + boxHeight);
+    context.lineTo(x + radius, y + boxHeight);
+    context.quadraticCurveTo(x, y + boxHeight, x, y + boxHeight - radius);
+    context.lineTo(x, y + radius);
+    context.quadraticCurveTo(x, y, x + radius, y);
+    context.closePath();
+    
+    context.fill();
+    context.shadowBlur = 0;
+    context.stroke();
+    
+    // Draw text with enhanced visibility
+    context.fillStyle = '#ffff00';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    
+    // Text shadow for better contrast
+    context.shadowColor = 'rgba(0, 0, 0, 0.8)';
+    context.shadowBlur = 16;
+    context.shadowOffsetX = 8;
+    context.shadowOffsetY = 8;
+    
+    context.fillText(text, canvas.width / 2, canvas.height / 2);
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    
+    const spriteMaterial = new THREE.SpriteMaterial({ 
+        map: texture,
+        transparent: true,
+        depthTest: false,
+        depthWrite: false,
+        renderOrder: 999999
+    });
+    
+    const sprite = new THREE.Sprite(spriteMaterial);
+    sprite.scale.set(80, 40, 1); // Much larger scale
+    sprite.renderOrder = 999999;
+    
+    return sprite;
 }
 
 function createRegionLabel(position, text) {
-    const label = createTextLabel(text, position, 2);
-    if (label) {
-        // Set the text mesh color to yellow (it's the second child in the group)
-        label.children[1].material.color.setHex(0xffff00);
-        scene.add(label);
-        return label;
-    }
-    return null;
+    const label = createTextSprite(text);
+    label.position.copy(position);
+    label.position.y += 12; // Increased offset for better visibility
+    label.userData = { isLabel: true };
+    scene.add(label);
+    return label;
+}
+
+function createFCLabel(position, fc) {
+    const labelText = `${fc.name} (${fc.callsign})`;
+    const label = createTextSprite(labelText);
+    label.position.copy(position);
+    label.position.y += 8; // Increased offset for better visibility
+    label.userData = { isLabel: true, isFC: true };
+    scene.add(label);
+    return label;
 }
 
 // Add this to your init function after creating the renderer
@@ -907,7 +903,7 @@ function createStarSystem(data, position) {
             anchor_description: data.anchor_description,
             requirePermit: data.requirePermit,
             completed: data.completed,
-            isInProgress: data.isInProgress  // Make sure this is set in the data
+            isInProgress: data.isInProgress
         };
 
         const starSize = isSpecial ? 2.5 : (isPopulated ? 2.0 : 1.5);
@@ -923,7 +919,7 @@ function createStarSystem(data, position) {
         star.position.copy(position);
         
         // Enhanced glow effect
-        const glowGeometry = new THREE.SphereGeometry(starSize * 2, 32, 32);  // Larger glow
+        const glowGeometry = new THREE.SphereGeometry(starSize * 2, 32, 32);
         const glowMaterial = new THREE.MeshBasicMaterial({
             color: color,
             transparent: true,
@@ -943,6 +939,185 @@ function createStarSystem(data, position) {
         console.error(`Error creating star system: ${data.name}`, error);
         return null;
     }
+}
+
+// Load expedition data from JSON files
+async function loadExpeditionData() {
+    const sheets = ['setup', 'admin-manifest', 'route', 'fc-manifest', 'hauler-manifest'];
+    const expeditionData = {};
+    
+    for (const sheet of sheets) {
+        try {
+            const response = await fetch(`data/sheets/${sheet}.json`);
+            expeditionData[sheet] = await response.json();
+            console.log(`✓ Loaded ${sheet} data: ${expeditionData[sheet].length} rows`);
+        } catch (error) {
+            console.error(`❌ Error loading ${sheet} data:`, error);
+            expeditionData[sheet] = [];
+        }
+    }
+    
+    return expeditionData;
+}
+
+// Load special systems from CSV
+async function loadSpecialSystems() {
+    try {
+        const response = await fetch('data/special_systems.csv');
+        const csvText = await response.text();
+        const lines = csvText.split('\n').slice(1); // Skip header
+        
+        lines.forEach(line => {
+            if (!line.trim()) return; // Skip empty lines
+            const [name, category, alias, color] = line.split(',');
+            if (name && color) {
+                // Convert hex color string to number
+                const colorNum = parseInt(color.replace('#', '0x'));
+                SPECIAL_SYSTEMS[name] = {
+                    category: category || '',
+                    alias: alias || '',
+                    color: colorNum
+                };
+            }
+        });
+        console.log('Loaded special systems:', Object.keys(SPECIAL_SYSTEMS).length);
+    } catch (error) {
+        console.error('Error loading special systems:', error);
+    }
+}
+
+function createControlPanel() {
+    // Remove any existing control panels
+    const existingPanels = document.querySelectorAll('.control-panel');
+    existingPanels.forEach(panel => panel.remove());
+
+    const container = document.createElement('div');
+    container.className = 'control-panel';
+    container.style.position = 'absolute';
+    container.style.top = '10px';
+    container.style.right = '10px';
+    container.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    container.style.padding = '15px';
+    container.style.borderRadius = '8px';
+    container.style.color = 'white';
+    container.style.zIndex = '1000';
+    container.style.minWidth = '200px';
+    container.style.fontFamily = 'Arial, sans-serif';
+
+    const title = document.createElement('div');
+    title.textContent = 'Display Options';
+    title.style.fontWeight = 'bold';
+    title.style.marginBottom = '10px';
+    title.style.borderBottom = '1px solid rgba(255, 255, 255, 0.3)';
+    title.style.paddingBottom = '5px';
+    container.appendChild(title);
+
+    // Create toggle for Labels (first in the list)
+    const labelToggle = createToggle(
+        'Show Labels',
+        showLabels,
+        (checked) => {
+            showLabels = checked;
+            scene.traverse((object) => {
+                if (object.userData && object.userData.isLabel) {
+                    object.visible = checked;
+                }
+            });
+        }
+    );
+    container.appendChild(labelToggle);
+
+    // Add other toggles...
+    const fcToggle = createToggle(
+        'Show Fleet Carriers',
+        fcMarkersVisible,
+        (checked) => {
+            fcMarkersVisible = checked;
+            scene.traverse((object) => {
+                if (object.userData && object.userData.isFC) {
+                    object.visible = checked;
+                }
+            });
+        }
+    );
+    container.appendChild(fcToggle);
+
+    const unclaimedToggle = createToggle(
+        'Show Unclaimed Systems',
+        showUnclaimedSystems,
+        (checked) => {
+            showUnclaimedSystems = checked;
+            updateParticleVisibility();
+        }
+    );
+    container.appendChild(unclaimedToggle);
+
+    const routeToggle = createToggle(
+        'Show Expedition Route',
+        showExpeditionRoute,
+        (checked) => {
+            showExpeditionRoute = checked;
+            if (window.routeLine) {
+                window.routeLine.visible = checked;
+            }
+            expeditionWaypoints.visible = checked;
+        }
+    );
+    container.appendChild(routeToggle);
+
+    document.body.appendChild(container);
+}
+
+// Helper function to create toggle switches
+function createToggle(label, initialState, onChange) {
+    const container = document.createElement('div');
+    container.className = 'toggle-container';
+    container.style.marginBottom = '10px';
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.cursor = 'pointer';
+    container.style.padding = '5px';
+    container.style.borderRadius = '4px';
+    container.style.transition = 'background-color 0.2s';
+    container.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = initialState;
+    checkbox.style.marginRight = '10px';
+    checkbox.style.cursor = 'pointer';
+    checkbox.style.width = '20px';
+    checkbox.style.height = '20px';
+
+    const labelElement = document.createElement('label');
+    labelElement.textContent = label;
+    labelElement.style.cursor = 'pointer';
+    labelElement.style.userSelect = 'none';
+    labelElement.style.flex = '1';
+
+    container.appendChild(checkbox);
+    container.appendChild(labelElement);
+
+    container.addEventListener('mouseover', () => {
+        container.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    });
+
+    container.addEventListener('mouseout', () => {
+        container.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    });
+
+    container.addEventListener('click', (e) => {
+        if (e.target !== checkbox) {
+            checkbox.checked = !checkbox.checked;
+            onChange(checkbox.checked);
+        }
+    });
+
+    checkbox.addEventListener('change', () => {
+        onChange(checkbox.checked);
+    });
+
+    return container;
 }
 
 // Start initialization
