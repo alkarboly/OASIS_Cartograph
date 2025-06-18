@@ -18,6 +18,10 @@ let font;
 // Add global variable for label visibility
 let showLabels = true;
 
+// Add to global variables at top
+let fcLabels = [];
+let showFCLabels = true;
+
 // Loading screen elements
 loadingScreen = document.getElementById('loading-screen');
 loadingProgress = document.querySelector('.loading-progress');
@@ -39,16 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const unclaimedToggle = document.getElementById('showUnclaimedSystems');
     const routeToggle = document.getElementById('showExpeditionRoute');
     const labelToggle = document.getElementById('showLabels');
+    const fcToggle = document.getElementById('showFCLabels');
     
     // Set initial state of toggles
     unclaimedToggle.checked = showUnclaimedSystems;
     routeToggle.checked = showExpeditionRoute;
     labelToggle.checked = showLabels;
+    fcToggle.checked = showFCLabels;
     
     labelToggle.addEventListener('change', (e) => {
         showLabels = e.target.checked;
         scene.traverse((object) => {
-            if (object.userData && object.userData.isLabel) {
+            if (object.userData && object.userData.isLabel && !object.userData.isFC) {
                 object.visible = showLabels;
             }
         });
@@ -65,6 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Route toggle changed:', e.target.checked);
         showExpeditionRoute = e.target.checked;
         updateRouteVisibility();
+    });
+
+    fcToggle.addEventListener('change', (e) => {
+        showFCLabels = e.target.checked;
+        scene.traverse((object) => {
+            if (object.userData && object.userData.isFC) {
+                object.visible = showFCLabels;
+            }
+        });
     });
 });
 
@@ -129,7 +144,7 @@ async function init() {
             await loadSpecialSystems();
             
             // Load all data first
-            const [data, expeditionData, routeData, anchorData] = await Promise.all([
+            const [data, expeditionData, routeData, anchorData, fcData] = await Promise.all([
                 fetch('data/combined_visualization_systems.json')
                     .then(response => {
                         if (!response.ok) {
@@ -153,7 +168,8 @@ async function init() {
                                 description: values[2] ? values[2].trim() : ''
                             };
                         });
-                    })
+                    }),
+                fetch('data/sheets/fc-manifest.json').then(r => r.json())
             ]);
 
             // Store the combined data globally
@@ -279,6 +295,17 @@ async function init() {
             // Create route visualization after all data is loaded and processed
             updateLoadingProgress('Creating expedition route...');
             createRouteVisualization(routeData);
+
+            // Add FC labels
+            fcData.forEach(fc => {
+                const system = data.systems.find(s => s.name === fc.location);
+                if (system) {
+                    const position = parseCoordinates(system);
+                    if (position) {
+                        createFCLabel(position, fc);
+                    }
+                }
+            });
 
             hideLoadingScreen();
         } catch (error) {
@@ -615,7 +642,7 @@ function getStarColor(data) {
     return population > 0 ? 0x800080 : 0xFFFFFF;
 }
 
-function createTextSprite(text) {
+function createTextSprite(text, options = {}) {
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     
@@ -625,15 +652,15 @@ function createTextSprite(text) {
     
     // Background
     context.fillStyle = 'rgba(0, 0, 0, 0.85)';
-    context.strokeStyle = '#ffff00';
+    context.strokeStyle = options.fontColor || '#ffff00';
     context.lineWidth = 8;
     
     // Text settings
-    context.font = 'bold 96px Arial';
+    context.font = options.isFC ? '64px Arial' : 'bold 96px Arial';
     const textWidth = context.measureText(text).width;
     const padding = 60;
     const boxWidth = textWidth + (padding * 2);
-    const boxHeight = 140;
+    const boxHeight = options.isFC ? 100 : 140;
     
     // Draw rounded rectangle background
     const x = (canvas.width - boxWidth) / 2;
@@ -641,7 +668,7 @@ function createTextSprite(text) {
     const radius = 20;
     
     // Outer glow
-    context.shadowColor = '#ffff00';
+    context.shadowColor = options.fontColor || '#ffff00';
     context.shadowBlur = 30;
     context.shadowOffsetX = 0;
     context.shadowOffsetY = 0;
@@ -663,8 +690,8 @@ function createTextSprite(text) {
     context.stroke();
     
     // Draw text
-    context.fillStyle = '#ffff00';
-    context.textAlign = 'center';
+    context.fillStyle = options.fontColor || '#ffff00';
+    context.textAlign = options.isFC ? 'left' : 'center';
     context.textBaseline = 'middle';
     
     // Text shadow
@@ -673,7 +700,8 @@ function createTextSprite(text) {
     context.shadowOffsetX = 4;
     context.shadowOffsetY = 4;
     
-    context.fillText(text, canvas.width / 2, canvas.height / 2);
+    const textX = options.isFC ? x + padding : canvas.width / 2;
+    context.fillText(text, textX, canvas.height / 2);
     
     const texture = new THREE.CanvasTexture(canvas);
     texture.minFilter = THREE.LinearFilter;
@@ -688,8 +716,9 @@ function createTextSprite(text) {
     });
     
     const sprite = new THREE.Sprite(spriteMaterial);
-    // Increase the scale significantly but not to the point of crashing
-    sprite.scale.set(320, 160, 1);
+    // Scale FC labels bigger but still smaller than region labels
+    const scale = options.isFC ? 250 : 320;
+    sprite.scale.set(scale, scale/2, 1);
     sprite.renderOrder = 999999;
     
     return sprite;
@@ -786,29 +815,27 @@ function addStyles() {
 
 // This function creates a new label for a region
 function createRegionLabel(position, text) {
-    // Create the HTML element
-    const labelDiv = document.createElement('div');
-    labelDiv.className = 'region-label';
-    labelDiv.textContent = text;
-    
-    // Store the 3D position for later use in updateLabelPositions
-    labelDiv.userData = {
-        position: position.clone(),
-        isLabel: true
-    };
-    
-    // Add to document
-    document.body.appendChild(labelDiv);
-    
-    return labelDiv;
+    const label = createTextSprite(text, { 
+        isRegion: true,
+        fontColor: '#ffff00'
+    });
+    label.position.copy(position);
+    label.position.y += 15;
+    label.userData = { isLabel: true };
+    scene.add(label);
+    return label;
 }
 
 function createFCLabel(position, fc) {
     const labelText = `${fc.name} (${fc.callsign})`;
-    const label = createTextSprite(labelText);
+    const label = createTextSprite(labelText, { 
+        fontColor: '#00ffff',
+        isFC: true 
+    });
     label.position.copy(position);
-    label.position.y += 8; // Increased offset for better visibility
+    label.position.y += 8;
     label.userData = { isLabel: true, isFC: true };
+    label.visible = showFCLabels;
     scene.add(label);
     return label;
 }
@@ -1127,7 +1154,7 @@ function createControlPanel() {
         (checked) => {
             showLabels = checked;
             scene.traverse((object) => {
-                if (object.userData && object.userData.isLabel) {
+                if (object.userData && object.userData.isLabel && !object.userData.isFC) {
                     object.visible = checked;
                 }
             });
@@ -1138,9 +1165,9 @@ function createControlPanel() {
     // Add other toggles...
     const fcToggle = createToggle(
         'Show Fleet Carriers',
-        fcMarkersVisible,
+        showFCLabels,
         (checked) => {
-            fcMarkersVisible = checked;
+            showFCLabels = checked;
             scene.traverse((object) => {
                 if (object.userData && object.userData.isFC) {
                     object.visible = checked;
