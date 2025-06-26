@@ -2,17 +2,41 @@
   {
     "callsign": "WNQ-WTW",
     "name": "The Hour",
-    "owner_": "mutahadir",
-    "status": "Deployed",
-    "timestamp": "2025-06-17 11:16:15",
-    "location": "NGC 2232 Sector GW-W c1-1"
+    "owner": "mutahadir",
+    "status": "Loading",
+    "timestamp": "2025-06-26 22:15:56",
+    "location": "2MASS J05403931-0226460"
   },
   {
     "callsign": "B6B-48Z",
     "name": "Dr Craig Container Co",
-    "owner_": "sleepy-lil-turtle",
-    "status": "Full",
-    "timestamp": "2025-06-17T11:15:44.097288",
+    "owner": "sleepy-lil-turtle",
+    "status": "Loading",
+    "timestamp": "2025-06-26T19:54:59.052273",
     "location": "2MASS J05403931-0226460"
+  },
+  {
+    "callsign": "R1Z-96K",
+    "name": "Winnipesaukee",
+    "owner": "CMDR Klappsaddle",
+    "status": "Loading",
+    "timestamp": "2025-06-25T01:50:33.389370",
+    "location": "2MASS J05403931-0226460"
+  },
+  {
+    "callsign": "K4G-66X",
+    "name": "Cornucopia",
+    "owner": "CMDR Ligaratus",
+    "status": "Loading",
+    "timestamp": "2025-06-26T22:17:07.675672",
+    "location": "2MASS J05403931-0226460"
+  },
+  {
+    "callsign": "VNT-1VF",
+    "name": "[OSC] Warehouse Depot",
+    "owner": "Rudi Raumkraut",
+    "status": "Mobile Depot",
+    "timestamp": "2025-06-19T20:10:48.924270",
+    "location": "NGC 2232 Sector RD-S B4-0"
   }
 ]

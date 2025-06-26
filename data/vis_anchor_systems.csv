@@ -1,6 +1,6 @@
 name,radius_ly,description
-2MASS J05405172-0226489,100,OASIS (OSC I)
-LAM01 ORIONIS,100,Lambda Orionis (OSC II)
+2MASS J05405172-0226489,100,OASIS
+LAM01 ORIONIS,100,Lambda Orionis
 NGC 2232 Sector CR-L b8-0, 100,OSC III
 Trapezium Sector GM-U c3-2, 100,
 Col 69 Sector YV-C c13-1, 100,
@@ -19,5 +19,8 @@ Col 69 Sector FH-U d3-19,50,
 Col 69 Sector FH-U d3-7,50,
 Col 69 Sector DZ-H a29-0,50,
 Oochorrs ZA-A a96-0,50,
-Oochorrs YX-F d12-24, 50, Shoulder Of Orion (SoO)
+Oochorrs YX-F d12-24, 50, SoO
 Messier 78 Sector DL-Y d15,100,
+Messier 78 Sector PI-T c3-9,100, Horsehead
+Messier 78 Sector TO-R c4-3,100,
+Witch Head Sector IR-W c1-9,75, 'Goid WH
